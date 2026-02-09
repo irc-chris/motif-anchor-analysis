@@ -3,7 +3,6 @@ import pandas as pd
 import sys
 import numpy as np
 import seaborn as sns
-import matplotlib.pyplot as plt
 
 
 def plot_confusion_heatmap(ax, x_param, adf, unique=False):
@@ -67,9 +66,6 @@ for genome in ['GM', 'HG2']:
 
     combined_with_snp_df = combined_with_snp_df.sort_values(by=['variant_id'])
 
-    gm_summary = combined_with_snp_df[combined_with_snp_df['GENOME_x'] == 'GM']
-    hg2_summary = combined_with_snp_df[combined_with_snp_df['GENOME_x'] == 'HepG2']
-
     variant_ids = combined_with_snp_df['variant_id'].unique()
     variant_ids = np.sort(variant_ids)
 
@@ -96,8 +92,8 @@ for genome in ['GM', 'HG2']:
             alpha=0.7
         )
 
-    print('Number of rows for genome:', combined_df_og[combined_df_og['GENOME'].str.startswith(genome[0])].shape[0])
-    print("Unique variant IDs:", len(combined_with_snp_df['variant_id'].unique()))
+    print('Number of rows for genome:', combined_df.shape[0])
+    print("Unique variant IDs:", len(variant_ids))
     print(combined_with_snp_df.shape)
 
     axes[0].set_xlabel("DIFF_LOG2_Emp")
@@ -136,24 +132,11 @@ for genome in ['GM', 'HG2']:
     plt.savefig(f"{folder}/{genome}_motif_anchor_snp_effects_summary.png")
     dfs.append(combined_with_snp_df)
 
-plt.figure(figsize=(8, 6))
+fig, ax = plt.subplots(figsize=(8, 6))
 total = pd.concat(dfs, ignore_index=True)
-
-confusion_data = pd.crosstab(
-    total["strongest_effect"], 
-    total['btwn_lines']
-)
-
-# Create heatmap
-sns.heatmap(
-    confusion_data, 
-    annot=True, 
-    fmt='d', 
-    cmap='YlOrRd',
-    cbar_kws={'label': 'Count'}
-)
-    
-plt.xlabel("Is Anchor Predicted btwn_lines?")
-plt.ylabel("Strongest SNP Effect on Overlapping Motif")
-plt.title("Good Prediction vs Strongest SNP Effect on Motif")
+plot_confusion_heatmap(ax, "btwn_lines", total)
+ax.set_xlabel("Is Anchor Predicted btwn_lines?")
+ax.set_ylabel("Strongest SNP Effect on Overlapping Motif")
+ax.set_title("Good Prediction vs Strongest SNP Effect on Motif")
+plt.tight_layout()
 plt.savefig(f"{folder}/btwn_lines_vs_strongest_effect.png")
