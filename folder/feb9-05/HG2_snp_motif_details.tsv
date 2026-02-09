@@ -1,0 +1,4 @@
+CHR	POS1	POS2	motif_chr	motif_start	motif_end	motif_id	snp_pos	ref	alt	genotype	variant_type	ref_score	alt_score	delta_score	ref_seq	alt_seq	abs_delta	motif_effect	n_motif_snps	strongest_effect	anchor_summary	GENOME
+chr1	116672611	116672820	chr1	116672731	116672750	-motif310	116672736	A	G	1|0	REF	4.009	6.79	10.799	ATGCACCATCTAGCGTTAG	ATGCGCCATCTAGCGTTAG	10.799	2	1	2	SNP that strongly alters CTCF motif strength.	HG2
+chr2	113297317	113297963	chr2	113297718	113297737	-motif2657	113297730	A	G	1|0	REF	0.976	4.715	5.691	TGCTTCTTTCCACTGGCTG	TGCTTCTTTCCGCTGGCTG	5.691	2	1	2	SNP that strongly alters CTCF motif strength.	HG2
+chr16	87678735	87678895	chr16	87678750	87678769	-motif1827	87678760	T	C	1|0	REF	8.053	5.037	13.091	GAGTGCCCTTGTGAGGCAG	GAGTGCCCTCGTGAGGCAG	13.091	2	1	2	SNP that strongly alters CTCF motif strength.	HG2
