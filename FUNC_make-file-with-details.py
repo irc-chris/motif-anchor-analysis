@@ -23,7 +23,11 @@ def join_dataframes(file1, file2, anchor_details_file, output_file='combined.tsv
     
     # Merge on CHR, POS1, POS2
     combined_df = pd.merge(anchor_details_df, df1,  on=['CHR', 'POS1', 'POS2'], how='inner')
+    combined_df.to_csv(output_file.replace('.tsv', '_HG2.tsv'), sep='\t', index=False)
+
     combined_df2 = pd.merge(anchor_details_df, df2, on=['CHR', 'POS1', 'POS2'], how='inner')
+    combined_df2.to_csv(output_file.replace('.tsv', '_GM.tsv'), sep='\t', index=False)
+
     combined_df = pd.concat([combined_df, combined_df2], ignore_index=True)
     
     # Save to output file

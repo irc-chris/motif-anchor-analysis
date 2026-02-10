@@ -9,8 +9,8 @@ import sys
 # ----------------------------
 TYPE = sys.argv[1]  # "GM" or "HG2"
 folder = sys.argv[2]  # folder to read / write files
-INPUT = f"{folder}/{TYPE}_anchors_with_motifs.tsv"
-OUTPUT = f"{folder}/{TYPE}_JUST-snp-analysis.tsv"
+INPUT = f"{folder}/2-{TYPE}_anchors_with_motifs.tsv"
+OUTPUT = f"{folder}/3-{TYPE}_JUST-snp-analysis.tsv"
 
 # ----------------------------
 # Load intersect output
@@ -86,12 +86,19 @@ def anchor_sentence(row):
 
 anchor_summary["anchor_summary"] = anchor_summary.apply(anchor_sentence, axis=1)
 
+print(df.shape, 'before')
+print(df)
+print(anchor_summary)
+
 # Merge n_motif_snps back to df
 df = df.merge(
     anchor_summary[["CHR", "POS1", "POS2", "n_motif_snps", "strongest_effect", "anchor_summary"]], 
     on=["CHR", "POS1", "POS2"], 
     how="left"
 )
+
+print(df.shape, 'after')
+print(df)
 
 df["anchor_summary"] = df.apply(anchor_sentence, axis=1)
 df["GENOME"] = TYPE
@@ -110,6 +117,6 @@ anchor_summary["GENOME"] = TYPE
 # Save output
 # ----------------------------
 anchor_summary.to_csv(OUTPUT, sep="\t", index=False, header=True)
-df.to_csv(f"{folder}/{TYPE}_snp_motif_details.tsv", sep="\t", index=False, header=True)
+df.to_csv(f"{folder}/3-{TYPE}_snp_motif_details.tsv", sep="\t", index=False, header=True)
 
 print(f"Saved SNP motif analysis to {OUTPUT}")

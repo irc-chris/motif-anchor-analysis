@@ -44,7 +44,7 @@ def plot_confusion_heatmap(ax, x_param, adf, unique=False):
 
 folder = sys.argv[1]  # folder to read / write files
 # Concatenate all dataframes
-combined_df_og = pd.read_csv(f"{folder}/motif_anchor_analysis_selected_anchors.tsv", sep="\t")
+combined_df_og = pd.read_csv(f"{folder}/1-motif_anchor_analysis_selected_anchors.tsv", sep="\t")
 dfs = []
 
 for genome in ['GM', 'HG2']:
@@ -53,7 +53,7 @@ for genome in ['GM', 'HG2']:
 
     print(f"Processing genome: {genome}", genome[0])
 
-    combined_anchors_df = pd.read_csv(f"{folder}/{genome}_snp_motif_details.tsv", sep="\t", header=0)
+    combined_anchors_df = pd.read_csv(f"{folder}/3-{genome}_snp_motif_details.tsv", sep="\t", header=0)
 
     combined_with_snp_df = pd.merge(combined_df, combined_anchors_df,
                         on=['CHR', 'POS1', 'POS2'], how='left')

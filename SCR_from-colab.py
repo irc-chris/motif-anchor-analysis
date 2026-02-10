@@ -7,9 +7,11 @@ import sys
 ### Seeing area between lines.
 exclude = 1
 shift = 1
-N = 5
+N = 9
 folder = sys.argv[1]  # folder to read / write files
 have_bad = sys.argv[2]
+sample_bad = sys.argv[3]
+sample_good = sys.argv[4]
 
 def get_okay(df):
   mask = (
@@ -55,18 +57,34 @@ dfGM_outside['GENOME'] = 'GM12878'
 if have_bad == 'yes':
     dfGM_bad = pd.read_csv('/mnt/altnas/work/ishawnia/empvsag/motif-anchor-analysis/GM12878_5-0.1_outside.tsv', sep='\t')
     dfHG2_bad = pd.read_csv('/mnt/altnas/work/ishawnia/empvsag/motif-anchor-analysis/HepG2_5-0.1_outside.tsv', sep='\t')
-    hepg2_random_bad = dfHG2_bad.sample(n=N, replace=False)
-    gm_random_bad = dfGM_bad.sample(n=N, replace=False)
+    if sample_bad == 'yes':
+      hepg2_random_bad = dfHG2_bad.sample(n=N, replace=False)
+      gm_random_bad = dfGM_bad.sample(n=N, replace=False)
+    else:
+      hepg2_random_bad = dfHG2_bad
+      gm_random_bad = dfGM_bad
     hepg2_random_bad['GENOME'] = 'HepG2'
     gm_random_bad['GENOME'] = 'GM12878'
     hepg2_random_bad['along-x'] = 1
     gm_random_bad['along-x'] = 1
 else:
-    hepg2_random_bad = dfHg2_outside[(dfHg2_outside['along-x'] == 1) & (abs(dfHg2_outside['DIFF_LOG2_data1']) > 3)].sample(n=N, replace=False)
-    gm_random_bad = dfGM_outside[(dfGM_outside['along-x'] == 1) & (abs(dfGM_outside['DIFF_LOG2_data1']) > 3)].sample(n=N, replace=False)
+  h_outside_bad = dfHg2_outside[(dfHg2_outside['along-x'] == 1) & (abs(dfHg2_outside['DIFF_LOG2_data1']) > 3)]
+  g_outside_bad = dfGM_outside[(dfGM_outside['along-x'] == 1) & (abs(dfGM_outside['DIFF_LOG2_data1']) > 3)]
+  if sample_bad == 'yes':
+    hepg2_random_bad = h_outside_bad.sample(n=N, replace=False)
+    gm_random_bad = g_outside_bad.sample(n=N, replace=False)
+  else:
+    hepg2_random_bad = h_outside_bad
+    gm_random_bad = g_outside_bad
 
-hepg2_random_good = dfHg2_outside[(dfHg2_outside['btwn_lines'] == 1) & (abs(dfHg2_outside['DIFF_LOG2_data1']) > 3)].sample(n=N, replace=False)
-gm_random_good = dfGM_outside[(dfGM_outside['btwn_lines'] == 1) & (abs(dfGM_outside['DIFF_LOG2_data1']) > 3)].sample(n=N, replace=False)
+h_outside_good = dfHg2_outside[(dfHg2_outside['btwn_lines'] == 1) & (abs(dfHg2_outside['DIFF_LOG2_data1']) > 3)]
+g_outside_good = dfGM_outside[(dfGM_outside['btwn_lines'] == 1) & (abs(dfGM_outside['DIFF_LOG2_data1']) > 3)]
+if sample_good == 'yes':
+  hepg2_random_good = h_outside_good.sample(n=N, replace=False)
+  gm_random_good = g_outside_good.sample(n=N, replace=False)
+else:
+  hepg2_random_good = h_outside_good
+  gm_random_good = g_outside_good
 
 print("\n#####")
 print(hepg2_random_bad)
@@ -79,12 +97,10 @@ print(gm_random_good)
 
 combined_anchors = pd.concat([hepg2_random_bad, hepg2_random_good, gm_random_bad, gm_random_good])
 
-# combined_anchors.drop(columns=['Unnamed: 0'], inplace=True)
-combined_anchors.to_csv(f'{folder}/motif_anchor_analysis_selected_anchors.tsv', sep='\t', index=False)
-
 just_anchor_variants = combined_anchors[['CHR', 'POS1', 'POS2', 'GENOME']]
+hepg2_variants = just_anchor_variants[just_anchor_variants['GENOME'] == 'HepG2'].drop(columns=['GENOME']).drop_duplicates()
+hepg2_variants.to_csv(f'{folder}/1-hepg2_selected_anchors_variants.bed', sep='\t', index=False, header=['#chrom', 'start', 'end'])
+gm_variants = just_anchor_variants[just_anchor_variants['GENOME'] == 'GM12878'].drop(columns=['GENOME']).drop_duplicates()
+gm_variants.to_csv(f'{folder}/1-gm12878_selected_anchors_variants.bed', sep='\t', index=False, header=['#chrom', 'start', 'end'])
 
-hepg2_variants = just_anchor_variants[just_anchor_variants['GENOME'] == 'HepG2'].drop(columns=['GENOME'])
-hepg2_variants.to_csv(f'{folder}/hepg2_selected_anchors_variants.bed', sep='\t', index=False, header=['#chrom', 'start', 'end'])
-gm_variants = just_anchor_variants[just_anchor_variants['GENOME'] == 'GM12878'].drop(columns=['GENOME'])
-gm_variants.to_csv(f'{folder}/gm12878_selected_anchors_variants.bed', sep='\t', index=False, header=['#chrom', 'start', 'end'])
+combined_anchors.to_csv(f'{folder}/1-motif_anchor_analysis_selected_anchors.tsv', sep='\t', index=False)
