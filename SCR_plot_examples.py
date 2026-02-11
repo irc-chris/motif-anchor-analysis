@@ -58,6 +58,68 @@ def plot_confusion_heatmap(ax, x_param, adf, unique=False):
     ax.set_ylabel("Strongest SNP Effect on CTCF Motif")
 
 
+def plot_combined_boxplot(ax, data, snp_effect_groups, effect_labels, title_prefix, positions_emp, positions_pred):
+    """
+    Plot combined empirical and predicted boxplots by SNP effect.
+    
+    Parameters:
+    -----------
+    ax : matplotlib axis
+        The axis to plot on
+    data : pandas.DataFrame
+        DataFrame containing the data
+    snp_effect_groups : list
+        List of SNP effect values to group by
+    effect_labels : list
+        Labels for each SNP effect group
+    title_prefix : str
+        Prefix for the plot title
+    positions_emp : list
+        X-axis positions for empirical boxplots
+    positions_pred : list
+        X-axis positions for predicted boxplots
+    """
+    # Prepare data for boxplots
+    boxplot_data_emp = [
+        data.loc[data["strongest_effect"] == g, "DIFF_LOG2_data1"] 
+        for g in snp_effect_groups
+    ]
+    boxplot_data_pred = [
+        data.loc[data["strongest_effect"] == g, "DIFF_LOG2_data2"] 
+        for g in snp_effect_groups
+    ]
+    
+    # Plot empirical boxplots
+    bp1 = ax.boxplot(boxplot_data_emp, positions=positions_emp, widths=0.6,
+                    patch_artist=True, 
+                    boxprops=dict(facecolor='lightblue', alpha=0.7),
+                    medianprops=dict(color='darkblue', linewidth=2))
+    
+    # Plot predicted boxplots
+    bp2 = ax.boxplot(boxplot_data_pred, positions=positions_pred, widths=0.6,
+                    patch_artist=True,
+                    boxprops=dict(facecolor='lightcoral', alpha=0.7),
+                    medianprops=dict(color='darkred', linewidth=2))
+    
+    # Get n's for each group
+    n_per_group = [len(d) for d in boxplot_data_emp]
+
+    # Set x-axis labels
+    ax.set_xticks([1.5, 4.5, 7.5])
+    ax.set_xticklabels(effect_labels)
+    ax.set_xlabel("Strongest SNP Effect on CTCF Motif")
+    ax.set_ylabel("Log2 Fold Change")
+    ax.set_title(f"{title_prefix}: Empirical vs Predicted Strength by SNP Effect\n(n={', '.join(map(str, n_per_group))})")
+    ax.grid(True, alpha=0.3, axis='y')
+    
+    # Add legend
+    from matplotlib.patches import Patch
+    legend_elements = [
+        Patch(facecolor='lightblue', alpha=0.7, label='Empirical'),
+        Patch(facecolor='lightcoral', alpha=0.7, label='Predicted')
+    ]
+    ax.legend(handles=legend_elements, loc='upper right')
+
 # ---------------------------- 
 # Configuration
 # ---------------------------- 
@@ -135,86 +197,19 @@ for genome in GENOMES:
     axes[0,0].grid(True, alpha=0.3)
     axes[0,0].legend()
 
-    # Plot 2 (0,1): Combined boxplot of empirical and predicted values by SNP effect
+
+    # Plot 2 (0,1) and Plot 3 (0,2): Combined boxplots
     good_pred = combined_with_snp_df[combined_with_snp_df['btwn_lines'] == 1]
     bad_pred = combined_with_snp_df[combined_with_snp_df['btwn_lines'] == 0]
     unique_groups = [0, 1, 2]
-
-    # Prepare data for side-by-side boxplots
-    positions_emp = [1, 4, 7]  # Positions for empirical
-    positions_pred = [2, 5, 8]  # Positions for predicted
-
-    boxplot_data_emp = [
-        good_pred.loc[good_pred["strongest_effect"] == g, "DIFF_LOG2_data1"] 
-        for g in unique_groups
-    ]
-    boxplot_data_pred = [
-        good_pred.loc[good_pred["strongest_effect"] == g, "DIFF_LOG2_data2"] 
-        for g in unique_groups
-    ]
-
-    # Plot empirical boxplots
-    bp1 = axes[0,1].boxplot(boxplot_data_emp, positions=positions_emp, widths=0.6,
-                            patch_artist=True, 
-                            boxprops=dict(facecolor='lightblue', alpha=0.7),
-                            medianprops=dict(color='darkblue', linewidth=2))
-
-    # Plot predicted boxplots
-    bp2 = axes[0,1].boxplot(boxplot_data_pred, positions=positions_pred, widths=0.6,
-                            patch_artist=True,
-                            boxprops=dict(facecolor='lightcoral', alpha=0.7),
-                            medianprops=dict(color='darkred', linewidth=2))
-
-    # Set x-axis labels
-    axes[0,1].set_xticks([1.5, 4.5, 7.5])
-    axes[0,1].set_xticklabels(SNP_EFFECT_LABELS)
-    axes[0,1].set_xlabel("Strongest SNP Effect on CTCF Motif")
-    axes[0,1].set_ylabel("Log2 Fold Change")
-    axes[0,1].set_title(f"Good Predictions: Empirical vs Predicted Strength by SNP Effect\n(n={len(good_pred)})")
-    axes[0,1].grid(True, alpha=0.3, axis='y')
-
-    # Add legend
-    from matplotlib.patches import Patch
-    legend_elements = [Patch(facecolor='lightblue', alpha=0.7, label='Empirical'),
-                    Patch(facecolor='lightcoral', alpha=0.7, label='Predicted')]
-    axes[0,1].legend(handles=legend_elements, loc='upper right')
+    positions_emp = [1, 4, 7]
+    positions_pred = [2, 5, 8]
 
 
-
-    boxplot_data_emp = [
-        bad_pred.loc[bad_pred["strongest_effect"] == g, "DIFF_LOG2_data1"] 
-        for g in unique_groups
-    ]
-    boxplot_data_pred = [
-        bad_pred.loc[bad_pred["strongest_effect"] == g, "DIFF_LOG2_data2"] 
-        for g in unique_groups
-    ]
-
-    # Plot empirical boxplots
-    bp1 = axes[0,2].boxplot(boxplot_data_emp, positions=positions_emp, widths=0.6,
-                            patch_artist=True, 
-                            boxprops=dict(facecolor='lightblue', alpha=0.7),
-                            medianprops=dict(color='darkblue', linewidth=2))
-
-    # Plot predicted boxplots
-    bp2 = axes[0,2].boxplot(boxplot_data_pred, positions=positions_pred, widths=0.6,
-                            patch_artist=True,
-                            boxprops=dict(facecolor='lightcoral', alpha=0.7),
-                            medianprops=dict(color='darkred', linewidth=2))
-
-    # Set x-axis labels
-    axes[0,2].set_xticks([1.5, 4.5, 7.5])
-    axes[0,2].set_xticklabels(SNP_EFFECT_LABELS)
-    axes[0,2].set_xlabel("Strongest SNP Effect on CTCF Motif")
-    axes[0,2].set_ylabel("Log2 Fold Change")
-    axes[0,2].set_title(f"Bad Predictions: Empirical vs Predicted Strength by SNP Effect\n(n={len(bad_pred)})")
-    axes[0,2].grid(True, alpha=0.3, axis='y')
-
-    # Add legend
-    from matplotlib.patches import Patch
-    legend_elements = [Patch(facecolor='lightblue', alpha=0.7, label='Empirical'),
-                    Patch(facecolor='lightcoral', alpha=0.7, label='Predicted')]
-    axes[0,2].legend(handles=legend_elements, loc='upper right')
+    plot_combined_boxplot(axes[0,1], bad_pred, unique_groups, SNP_EFFECT_LABELS, 
+                        "Bad Predictions", positions_emp, positions_pred)
+    plot_combined_boxplot(axes[0,2], good_pred, unique_groups, SNP_EFFECT_LABELS, 
+                        "Good Predictions", positions_emp, positions_pred)
 
 
     # Plot 4 (1,0): Scatter of SNP effect vs predicted values
