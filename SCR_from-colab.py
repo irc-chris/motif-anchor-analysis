@@ -12,7 +12,8 @@ folder = sys.argv[1]  # folder to read / write files
 have_bad = sys.argv[2]
 sample_bad = sys.argv[3]
 sample_good = sys.argv[4]
-GM_EXP = 'DKV' # DKV or AKB or DRZ
+GM_EXP = sys.argv[5] if len(sys.argv) > 5 else None
+print(f"Arguments: folder={folder}, have_bad={have_bad}, sample_bad={sample_bad}, sample_good={sample_good}, GM_EXP={GM_EXP}")
 
 def get_okay(df):
   mask = (

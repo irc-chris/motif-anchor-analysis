@@ -4,6 +4,10 @@ import sys
 import numpy as np
 import seaborn as sns
 
+Genome_names = {
+    'GM': 'GM12878',
+    'HG2': 'HepG2'
+}
 
 def plot_confusion_heatmap(ax, x_param, adf, unique=False):
     """
@@ -124,6 +128,8 @@ def plot_combined_boxplot(ax, data, snp_effect_groups, effect_labels, title_pref
 # Configuration
 # ---------------------------- 
 folder = sys.argv[1]
+Experiment = sys.argv[2] if len(sys.argv) > 2 else None
+print(f"Arguments: folder={folder}, Experiment={Experiment}")
 GENOMES = ['GM', 'HG2']
 SNP_EFFECT_LABELS = ['Effect <1', 'Effect 1-5', 'Effect ≥5']
 
@@ -178,6 +184,14 @@ for genome in GENOMES:
     # Create plots (2 rows x 3 columns)
     # ---------------------------- 
     fig, axes = plt.subplots(2, 3, figsize=(18, 12))
+    title = f'How Anchors Prediction Accuracy relates to Overlapping SNP-Effected CTCF Motifs \n Genome: {Genome_names[genome]} where |AG Pred L2D| < 0.1 and |ChIP L2D| > 5\n'
+    if Experiment:
+        title += f" Experiment: {Experiment}"
+    fig.suptitle(
+        title,
+        fontsize=18,
+        fontweight="bold"
+    )
     
     # Plot 1 (0,0): Empirical vs Predicted Log2FC
     for group_name, group_df in combined_with_snp_df.groupby('GENOME_x'):
