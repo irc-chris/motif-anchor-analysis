@@ -1,0 +1,16 @@
+CHR	POS1	POS2	n_motif_snps	max_abs_delta	strongest_effect	anchor_summary	GENOME
+chr1	30782988	30783126	1	13.8778144083	2	SNP that strongly alters CTCF motif strength.	GM
+chr1	89085945	89086065	2	20.0273376495	2	SNP that strongly alters CTCF motif strength.	GM
+chr1	153617749	153617807	3	12.4402898785	2	SNP that strongly alters CTCF motif strength.	GM
+chr1	182069091	182069300	1	1.01601338447	1	SNP that moderately affects CTCF motif strength.	GM
+chr1	211649168	211649222	2	6.05194188388	2	SNP that strongly alters CTCF motif strength.	GM
+chr4	156378259	156378319	1	11.1706386208	2	SNP that strongly alters CTCF motif strength.	GM
+chr5	120656016	120656046	2	22.5616096918	2	SNP that strongly alters CTCF motif strength.	GM
+chr5	151239370	151239472	2	19.1843132177	2	SNP that strongly alters CTCF motif strength.	GM
+chr5	152462226	152462684	3	8.73334671068	2	SNP that strongly alters CTCF motif strength.	GM
+chr7	23545053	23545173	2	6.94060618545	2	SNP that strongly alters CTCF motif strength.	GM
+chr9	92729406	92729618	3	18.1883846437	2	SNP that strongly alters CTCF motif strength.	GM
+chr11	116217183	116217247	1	7.28659180719	2	SNP that strongly alters CTCF motif strength.	GM
+chr13	20489336	20489406	1	12.0384453582	2	SNP that strongly alters CTCF motif strength.	GM
+chr17	46253969	46254065	1	0.0152628922817	0	SNP with no meaningful effect on CTCF motif strength.	GM
+chr18	10438003	10438087	1	3.97572291751	1	SNP that moderately affects CTCF motif strength.	GM
