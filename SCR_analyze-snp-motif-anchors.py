@@ -16,13 +16,12 @@ DETAIL_OUTPUT = f"{folder}/3-{TYPE}_snp_motif_details.tsv"
 COLUMNS = [
     "CHR", "POS1", "POS2",
     "motif_chr", "motif_start", "motif_end", "motif_id",
-    "snp_pos", "ref", "alt", "genotype", "variant_type",
-    "ref_score", "alt_score", "delta_score", "ref_seq", "alt_seq"
+    "snp_pos", "ref", "alt", "phase", "better_strand",
+    "delta_score", "h1_score", "h2_score", "ref_seq", "alt_seq"
 ]
 
 # Columns to round to 3 decimals
-SCORE_COLUMNS = ['ref_score', 'alt_score', 'delta_score', 'abs_delta']
-
+SCORE_COLUMNS = ['delta_score', 'h1_score', 'h2_score', 'abs_delta']    
 
 def classify_motif_effect(abs_delta):
     """Classify motif effect based on absolute delta score."""
@@ -56,6 +55,8 @@ df.columns = COLUMNS
 
 # Convert scores to float and calculate absolute delta
 df['delta_score'] = df['delta_score'].replace('.', 0).astype(float)
+df['h1_score'] = df['h1_score'].replace('.', 0).astype(float)
+df['h2_score'] = df['h2_score'].replace('.', 0).astype(float)
 df["abs_delta"] = df["delta_score"].abs()
 
 # Classify motif effects

@@ -13,6 +13,7 @@ have_bad = sys.argv[2]
 sample_bad = sys.argv[3]
 sample_good = sys.argv[4]
 GM_EXP = sys.argv[5] if len(sys.argv) > 5 else None
+chip_diff_threshold = float(sys.argv[6]) if len(sys.argv) > 6 else 3.0
 print(f"Arguments: folder={folder}, have_bad={have_bad}, sample_bad={sample_bad}, sample_good={sample_good}, GM_EXP={GM_EXP}")
 
 def get_okay(df):
@@ -96,6 +97,7 @@ if sample_good == 'yes':
 else:
   hepg2_random_good = h_outside_good
   gm_random_good = g_outside_good
+
 
 print("\n#####")
 print(hepg2_random_bad)

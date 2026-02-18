@@ -1,7 +1,7 @@
 folder=$3
 
-echo -e "CHR\tPOS1\tPOS2\tmotif_chr\tmotif_start\tmotif_end\tmotif_id\tsnp_pos\tref\talt\tgenotype\tvariant_type\tref_score\talt_score\tdelta_score\tref_seq\talt_seq" > $folder/2-GM_anchors_with_motifs.tsv
-echo -e "CHR\tPOS1\tPOS2\tmotif_chr\tmotif_start\tmotif_end\tmotif_id\tsnp_pos\tref\talt\tgenotype\tvariant_type\tref_score\talt_score\tdelta_score\tref_seq\talt_seq" > $folder/2-HG2_anchors_with_motifs.tsv
+echo -e "CHR\tPOS1\tPOS2\tmotif_chr\tmotif_start\tmotif_end\tmotif_id\tsnp_pos\tref\talt\tgenotype\tvariant_type\tdelta_score\th1_score\th2_score\tref_seq\talt_seq" > $folder/2-GM_anchors_with_motifs.tsv
+echo -e "CHR\tPOS1\tPOS2\tmotif_chr\tmotif_start\tmotif_end\tmotif_id\tsnp_pos\tref\talt\tgenotype\tvariant_type\tdelta_score\th1_score\th2_score\tref_seq\talt_seq" > $folder/2-HG2_anchors_with_motifs.tsv
 
 bedtools intersect \
   -a $1 \

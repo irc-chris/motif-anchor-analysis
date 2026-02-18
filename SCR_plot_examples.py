@@ -9,7 +9,23 @@ Genome_names = {
     'HG2': 'HepG2'
 }
 
-def plot_confusion_heatmap(ax, x_param, adf, unique=False):
+def determine_ref_more_reads(phase, h1_reads, h2_reads):
+    if phase == "0|1":
+            if h1_reads > h2_reads:
+                Flag = 1
+            else:
+                Flag = 0
+    elif phase == "1|0":
+            if h1_reads > h2_reads:
+                Flag = 0
+            else:
+                Flag = 1
+    else:
+        Flag = 2
+    return Flag
+
+
+def plot_confusion_heatmap(ax, x_param, adf, type='all', ylabels=True):
     """
     Plot a confusion matrix heatmap.
     
@@ -21,8 +37,8 @@ def plot_confusion_heatmap(ax, x_param, adf, unique=False):
         Column name for x-axis (columns of confusion matrix)
     adf : pandas.DataFrame
         DataFrame containing the data
-    unique : bool
-        Whether this is unique anchors only
+    type : str
+        Type of anchors to consider ('all', 'unique', 'motif')
     """
     # Check if dataframe is empty
     if adf.empty:
@@ -56,10 +72,21 @@ def plot_confusion_heatmap(ax, x_param, adf, unique=False):
     
     # Set titles with sample size
     n = len(adf)
-    anchor_type = "Unique Anchors" if unique else "All Anchor-Motif Overlaps"
+    if type == 'all':
+        anchor_type = " All Anchor-Motif Pairs"
+    elif type == 'unique':
+        anchor_type = "Unique Anchors Only"
+    elif type == 'motif':
+        anchor_type = f"Anchor-Strong-Motif Pairs (Either Motif Score ≥ {motif_threshold})"
+    if ylabels:
+        ax.set_yticklabels(SNP_EFFECT_LABELS)
+        ax.set_ylabel("Strongest SNP Effect on CTCF Motif")
+    else:
+        ax.tick_params(axis='y', left=False, labelleft=False)
+        ax.set(ylabel=None)
+    ax.set_xticklabels(['Bad Prediction', 'Good Prediction'])
     ax.set_title(f"{anchor_type}\nSNP Effect vs Prediction Accuracy (n={n})")
     ax.set_xlabel("Predicted Within ±1 of Empirical?")
-    ax.set_ylabel("Strongest SNP Effect on CTCF Motif")
 
 
 def plot_combined_boxplot(ax, data, snp_effect_groups, effect_labels, title_prefix, positions_emp, positions_pred):
@@ -112,8 +139,8 @@ def plot_combined_boxplot(ax, data, snp_effect_groups, effect_labels, title_pref
     ax.set_xticks([1.5, 4.5, 7.5])
     ax.set_xticklabels(effect_labels)
     ax.set_xlabel("Strongest SNP Effect on CTCF Motif")
-    ax.set_ylabel("Log2 Fold Change")
-    ax.set_title(f"{title_prefix}: Empirical vs Predicted Strength by SNP Effect\n(n={', '.join(map(str, n_per_group))})")
+    ax.set_ylabel("Predicted Log2 Fold Change")
+    ax.set_title(f"{title_prefix}\n(n={', '.join(map(str, n_per_group))})")
     ax.grid(True, alpha=0.3, axis='y')
     
     # Add legend
@@ -128,8 +155,14 @@ def plot_combined_boxplot(ax, data, snp_effect_groups, effect_labels, title_pref
 # Configuration
 # ---------------------------- 
 folder = sys.argv[1]
-Experiment = sys.argv[2] if len(sys.argv) > 2 else None
-print(f"Arguments: folder={folder}, Experiment={Experiment}")
+chip_diff_threshold = float(sys.argv[2]) if len(sys.argv) > 2 else 4.0
+empirical_threshold = float(sys.argv[3]) if len(sys.argv) > 3 else 15.0
+motif_threshold = float(sys.argv[4]) if len(sys.argv) > 4 else 8.0
+bad_ag_threshold = float(sys.argv[5]) if len(sys.argv) > 5 else 0.1
+good_ag_threshold = float(sys.argv[6]) if len(sys.argv) > 6 else 1.0
+Experiment = sys.argv[7] if len(sys.argv) > 7 else None
+
+print(f"Arguments: folder={folder}, Experiment={Experiment}, Chip Diff Thresh={chip_diff_threshold}, Chip H Thresh={empirical_threshold}, Motif Thresh={motif_threshold}, Bad AG Thresh={bad_ag_threshold}, Good AG Thresh={good_ag_threshold}")
 GENOMES = ['GM', 'HG2']
 SNP_EFFECT_LABELS = ['Effect <1', 'Effect 1-5', 'Effect ≥5']
 
@@ -157,8 +190,8 @@ for genome in GENOMES:
     
     # Merge anchor and SNP data
     combined_with_snp_df = pd.merge(
-        combined_df, 
         combined_anchors_df,
+        combined_df, 
         on=['CHR', 'POS1', 'POS2'], 
         how='left'
     )
@@ -177,14 +210,22 @@ for genome in GENOMES:
     variant_to_color = {vid: cmap(i) for i, vid in enumerate(variant_ids)}
     colors = combined_with_snp_df['variant_id'].map(variant_to_color)
     
-    print(f"  Unique variants: {len(variant_ids)}")
+    print(f"  Unique variants that overlap: {len(variant_ids)}")
     print(f"  Total data points: {combined_with_snp_df.shape[0]}")
     
+    # Determine if reference has more reads based on phase and haplotype data
+    combined_with_snp_df['ref_more_reads'] = combined_with_snp_df.apply(
+        lambda row: determine_ref_more_reads(row['phase'], row['haplotype1_data1'], row['haplotype2_data1']), axis=1
+    )
+
+    combined_with_snp_df[combined_with_snp_df['ref_more_reads'] == 2].to_csv(f"{folder}/7-{genome}_weird_more_reads.tsv", sep="\t", index=False)
+
     # ---------------------------- 
     # Create plots (2 rows x 3 columns)
     # ---------------------------- 
     fig, axes = plt.subplots(2, 3, figsize=(18, 12))
-    title = f'How Anchors Prediction Accuracy relates to Overlapping SNP-Effected CTCF Motifs \n Genome: {Genome_names[genome]} where |AG Pred L2D| < 0.1 and |ChIP L2D| > 5\n'
+    title = f'How Anchors Prediction Accuracy relates to Overlapping SNP-Effected CTCF Motifs \n Genome: {Genome_names[genome]} (|Chip L2D|: {chip_diff_threshold}, Chip H: {empirical_threshold})\nGood Predictions: ±{good_ag_threshold} of |Chip L2D|, Bad Predictions: |Pred L2D| < {bad_ag_threshold}\n'
+
     if Experiment:
         title += f" Experiment: {Experiment}"
     fig.suptitle(
@@ -198,7 +239,7 @@ for genome in GENOMES:
         axes[0,0].scatter(
             group_df['DIFF_LOG2_data1'],
             group_df['DIFF_LOG2_data2'],
-            c=colors[group_df.index],
+            # c=colors[group_df.index],
             label=group_name,
             alpha=0.7,
             s=30
@@ -224,32 +265,24 @@ for genome in GENOMES:
                         "Bad Predictions", positions_emp, positions_pred)
     plot_combined_boxplot(axes[0,2], good_pred, unique_groups, SNP_EFFECT_LABELS, 
                         "Good Predictions", positions_emp, positions_pred)
+    
+    # Plot 4 (1,0): Confusion matrix - all overlaps
+    print("\nUnique 'btwn_lines' values and their counts:")
+    print(combined_with_snp_df['btwn_lines'].value_counts())
+    plot_confusion_heatmap(axes[1,0], "btwn_lines", combined_with_snp_df, type='all', ylabels=True)
+    
+    # Plot 5 (1,1): Confusion matrix - unique anchors
+    combined_with_snp_unique_anchors = combined_with_snp_df.sort_values('strongest_effect').drop_duplicates(subset=['CHR', 'POS1', 'POS2'], keep='last')
+    plot_confusion_heatmap(axes[1,1], "btwn_lines", combined_with_snp_unique_anchors, type='unique', ylabels=True)
+    
+    # Plot 6: (1,2) Confusion matrix - strong motif overlaps only
+    motif_quality_mask = (combined_with_snp_df['h1_score'] >= motif_threshold) | (combined_with_snp_df['h2_score'] >= motif_threshold)
+    combined_with_snp_df['quality_motif'] = motif_quality_mask.astype(int)
+    combined_with_snp_good_motif = combined_with_snp_df[combined_with_snp_df['quality_motif'] == 1]
+    plot_confusion_heatmap(axes[1,2], "btwn_lines", combined_with_snp_good_motif, type='motif', ylabels=True)
 
+    combined_with_snp_df.to_csv(f"{folder}/6-{genome}_combined_anchor_snp_data.tsv", sep="\t", index=False)
 
-    # Plot 4 (1,0): Scatter of SNP effect vs predicted values
-    n_plot3 = len(combined_with_snp_df)
-    axes[1,0].scatter(
-        combined_with_snp_df['strongest_effect'],
-        combined_with_snp_df['DIFF_LOG2_data2'],
-        c=colors,
-        alpha=0.6,
-        s=30
-    )
-    axes[1,0].set_xlim(-0.5, 2.5)
-    axes[1,0].set_xticks([0, 1, 2])
-    axes[1,0].set_xticklabels(['<1', '1-5', '≥5'])
-    axes[1,0].set_xlabel("Strongest SNP Effect on CTCF Motif")
-    axes[1,0].set_ylabel("Predicted Log2 Fold Change")
-    axes[1,0].set_title(f"SNP Effect vs Predicted Strength\n(n={n_plot3})")
-    axes[1,0].grid(True, alpha=0.3, axis='y')
-    
-    # Plot 5 (1,1): Confusion matrix - all overlaps
-    plot_confusion_heatmap(axes[1,1], "btwn_lines", combined_with_snp_df, unique=False)
-    
-    # Plot 6 (1,2): Confusion matrix - unique anchors
-    combined_with_snp_unique_anchors = combined_with_snp_df.drop_duplicates(subset=['CHR', 'POS1', 'POS2'])
-    plot_confusion_heatmap(axes[1,2], "btwn_lines", combined_with_snp_unique_anchors, unique=True)
-    
     plt.tight_layout()
     plt.savefig(f"{folder}/6-{genome}_motif_anchor_snp_effects_summary.png", dpi=300)
     plt.close()
@@ -261,7 +294,8 @@ for genome in GENOMES:
 # ---------------------------- 
 fig, ax = plt.subplots(figsize=(8, 6))
 total_df = pd.concat(all_genome_dfs, ignore_index=True)
-plot_confusion_heatmap(ax, "btwn_lines", total_df, unique=False)
+total_df.to_csv(f"{folder}/6-combined_anchor_snp_data.tsv", sep="\t", index=False)
+plot_confusion_heatmap(ax, "btwn_lines", total_df, type='all')
 
 plt.tight_layout()
 plt.savefig(f"{folder}/6-combined_btwn_lines_vs_strongest_effect.png", dpi=300)

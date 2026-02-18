@@ -1,0 +1,83 @@
+CHR	POS1	POS2	n_motif_snps	max_abs_delta	strongest_effect	anchor_summary	GENOME
+chr1	16352318	16352686	1	4.26069	1	SNP that moderately affects CTCF motif strength.	HG2
+chr1	21854983	21856217	1	1.38729	1	SNP that moderately affects CTCF motif strength.	HG2
+chr1	54808397	54809173	6	3.63697105142	1	SNP that moderately affects CTCF motif strength.	HG2
+chr1	116672611	116672820	1	4.00888	1	SNP that moderately affects CTCF motif strength.	HG2
+chr1	161566293	161566389	1	0.178408647244	0	SNP with no meaningful effect on CTCF motif strength.	HG2
+chr1	200302120	200302724	2	0.0	0	SNP with no meaningful effect on CTCF motif strength.	HG2
+chr1	246971348	246971638	1	1.54039	1	SNP that moderately affects CTCF motif strength.	HG2
+chr2	88016388	88017142	4	3.79485485776	1	SNP that moderately affects CTCF motif strength.	HG2
+chr2	111135079	111136411	4	4.74612342514	1	SNP that moderately affects CTCF motif strength.	HG2
+chr2	113297317	113297963	1	0.97573	0	SNP with no meaningful effect on CTCF motif strength.	HG2
+chr2	140964473	140964617	1	1.69100888814	1	SNP that moderately affects CTCF motif strength.	HG2
+chr2	196850012	196850226	2	6.53162	2	SNP that strongly alters CTCF motif strength.	HG2
+chr2	232327200	232327338	2	6.41666787127	2	SNP that strongly alters CTCF motif strength.	HG2
+chr3	12287448	12288102	2	5.82612011255	2	SNP that strongly alters CTCF motif strength.	HG2
+chr3	46442698	46442892	2	18.7679	2	SNP that strongly alters CTCF motif strength.	HG2
+chr3	125766408	125766488	1	1.86713	1	SNP that moderately affects CTCF motif strength.	HG2
+chr3	126083889	126084425	3	3.17321	1	SNP that moderately affects CTCF motif strength.	HG2
+chr4	3942546	3942668	2	2.75363622064	1	SNP that moderately affects CTCF motif strength.	HG2
+chr4	88870781	88870990	1	2.76835	1	SNP that moderately affects CTCF motif strength.	HG2
+chr4	124944111	124944169	4	5.03118	2	SNP that strongly alters CTCF motif strength.	HG2
+chr4	169270433	169271387	2	2.03703	1	SNP that moderately affects CTCF motif strength.	HG2
+chr4	184649255	184649783	4	3.17321	1	SNP that moderately affects CTCF motif strength.	HG2
+chr4	185535454	185535632	1	1.53350233615	1	SNP that moderately affects CTCF motif strength.	HG2
+chr4	186901691	186902100	2	9.3738	2	SNP that strongly alters CTCF motif strength.	HG2
+chr5	34464631	34466195	2	0.274069005198	0	SNP with no meaningful effect on CTCF motif strength.	HG2
+chr5	127108691	127108900	1	4.00888	1	SNP that moderately affects CTCF motif strength.	HG2
+chr5	177303473	177303993	1	0.632260272065	0	SNP with no meaningful effect on CTCF motif strength.	HG2
+chr6	11392648	11393408	2	0.97573	0	SNP with no meaningful effect on CTCF motif strength.	HG2
+chr6	17600194	17600430	2	2.66107657708	1	SNP that moderately affects CTCF motif strength.	HG2
+chr6	25748434	25749786	2	2.72994	1	SNP that moderately affects CTCF motif strength.	HG2
+chr6	44223293	44224051	1	0.555431	0	SNP with no meaningful effect on CTCF motif strength.	HG2
+chr6	44253591	44253800	1	1.54039	1	SNP that moderately affects CTCF motif strength.	HG2
+chr6	167398413	167398561	1	0.406188633467	0	SNP with no meaningful effect on CTCF motif strength.	HG2
+chr7	1875392	1875818	1	1.71434572845	1	SNP that moderately affects CTCF motif strength.	HG2
+chr7	1884011	1884420	2	0.8255450753	0	SNP with no meaningful effect on CTCF motif strength.	HG2
+chr7	5302601	5302810	1	1.86713	1	SNP that moderately affects CTCF motif strength.	HG2
+chr7	5856573	5856739	1	0.100111	0	SNP with no meaningful effect on CTCF motif strength.	HG2
+chr7	98013534	98013680	1	0.100111	0	SNP with no meaningful effect on CTCF motif strength.	HG2
+chr7	116210423	116210567	1	0.718358328405	0	SNP with no meaningful effect on CTCF motif strength.	HG2
+chr8	12659496	12659574	2	5.39208	2	SNP that strongly alters CTCF motif strength.	HG2
+chr8	12665354	12665916	4	2.97114950942	1	SNP that moderately affects CTCF motif strength.	HG2
+chr8	41828406	41829232	1	4.34799	1	SNP that moderately affects CTCF motif strength.	HG2
+chr9	3135071	3135480	3	6.59769	2	SNP that strongly alters CTCF motif strength.	HG2
+chr9	83817265	83818105	3	1.13397026896	1	SNP that moderately affects CTCF motif strength.	HG2
+chr9	120755885	120756121	2	9.56086	2	SNP that strongly alters CTCF motif strength.	HG2
+chr9	136766181	136766803	5	2.7237291359	1	SNP that moderately affects CTCF motif strength.	HG2
+chr10	14991479	14991617	3	3.61252437018	1	SNP that moderately affects CTCF motif strength.	HG2
+chr10	31320812	31320988	2	3.3919110429	1	SNP that moderately affects CTCF motif strength.	HG2
+chr10	42866787	42866959	2	5.1379	2	SNP that strongly alters CTCF motif strength.	HG2
+chr10	110567083	110567879	1	1.60670616713	1	SNP that moderately affects CTCF motif strength.	HG2
+chr11	71563594	71563768	1	0.362336	0	SNP with no meaningful effect on CTCF motif strength.	HG2
+chr11	73598046	73598736	3	0.274079892697	0	SNP with no meaningful effect on CTCF motif strength.	HG2
+chr11	134868595	134869023	1	0.0	0	SNP with no meaningful effect on CTCF motif strength.	HG2
+chr12	9319349	9319457	1	0.0	0	SNP with no meaningful effect on CTCF motif strength.	HG2
+chr12	25386089	25386557	2	2.32175	1	SNP that moderately affects CTCF motif strength.	HG2
+chr12	52252081	52253079	1	0.984431944934	0	SNP with no meaningful effect on CTCF motif strength.	HG2
+chr13	22944561	22944770	2	0.0	0	SNP with no meaningful effect on CTCF motif strength.	HG2
+chr13	74215604	74215652	2	2.46186	1	SNP that moderately affects CTCF motif strength.	HG2
+chr13	95226301	95227110	1	2.95939	1	SNP that moderately affects CTCF motif strength.	HG2
+chr13	112893661	112894621	1	0.0	0	SNP with no meaningful effect on CTCF motif strength.	HG2
+chr14	49598592	49599262	2	4.27107	1	SNP that moderately affects CTCF motif strength.	HG2
+chr15	77118900	77119090	1	1.24941592713	1	SNP that moderately affects CTCF motif strength.	HG2
+chr15	77910508	77911030	3	4.17557	1	SNP that moderately affects CTCF motif strength.	HG2
+chr15	78751158	78751292	1	3.77968	1	SNP that moderately affects CTCF motif strength.	HG2
+chr15	90301318	90301456	1	0.0384061	0	SNP with no meaningful effect on CTCF motif strength.	HG2
+chr16	6573691	6573900	1	8.78955	2	SNP that strongly alters CTCF motif strength.	HG2
+chr16	11326771	11327180	1	1.34575373064	1	SNP that moderately affects CTCF motif strength.	HG2
+chr16	13904931	13905140	1	5.56286	2	SNP that strongly alters CTCF motif strength.	HG2
+chr16	14974880	14975298	3	10.8233387637	2	SNP that strongly alters CTCF motif strength.	HG2
+chr16	29179386	29179954	3	1.21489690255	1	SNP that moderately affects CTCF motif strength.	HG2
+chr16	87496311	87496520	1	2.25468170975	1	SNP that moderately affects CTCF motif strength.	HG2
+chr16	87678735	87678895	1	8.05316	2	SNP that strongly alters CTCF motif strength.	HG2
+chr17	47843131	47843340	1	0.178178537127	0	SNP with no meaningful effect on CTCF motif strength.	HG2
+chr17	75012190	75013092	4	5.06985362653	2	SNP that strongly alters CTCF motif strength.	HG2
+chr17	75524864	75525902	1	0.0	0	SNP with no meaningful effect on CTCF motif strength.	HG2
+chr18	7568503	7568791	1	1.2335	1	SNP that moderately affects CTCF motif strength.	HG2
+chr18	30081221	30081430	2	7.19516	2	SNP that strongly alters CTCF motif strength.	HG2
+chr19	12440863	12441259	1	0.912140031964	0	SNP with no meaningful effect on CTCF motif strength.	HG2
+chr19	14288935	14289055	2	4.17557	1	SNP that moderately affects CTCF motif strength.	HG2
+chr19	52570131	52570269	2	2.80551785089	1	SNP that moderately affects CTCF motif strength.	HG2
+chr20	23782408	23782770	3	0.893989	0	SNP with no meaningful effect on CTCF motif strength.	HG2
+chr21	34889630	34890448	3	2.57409	1	SNP that moderately affects CTCF motif strength.	HG2
