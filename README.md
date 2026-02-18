@@ -4,15 +4,24 @@ Investigates whether SNPs within CTCF motifs explain discrepancies between empir
 
 ## Pipeline
 
-The master script `SCR_sample_vs_motif-strength.sh` runs every step in order:
+The master script `SCR_motif-strength_vs_prediction.sh` runs every step in order:
 
 ```bash
-./SCR_sample_vs_motif-strength.sh <output_folder>
+./SCR_motif-strength_vs_prediction.sh <output_folder_prefix>
 ```
 
-### Step 1 — Sample anchors (`SCR_from-colab.py`)
+The script accepts configurable thresholds for filtering at the top:
+- `motif_threshold=8` — Minimum motif effect delta score to include in final filtered outputs and last heatmap
+- `chip_diff_threshold=3` — ChIP-seq log2 fold-change threshold for analyzing big changes
+- `empirical_threshold=15` — Empirical either homolog threshold for anchor selection
+- `bad_ag_threshold=0.1` — AlphaGenome log2 maximum for "bad" predictions to be from 0
+- `good_ag_threshold=1.0` — AlphaGenome log2 maximum for "good" predictions to be within from empirical
 
-Reads full ChIP-seq-vs-AlphaGenome comparison tables for GM12878 and HepG2. Filters to anchors outside a low-signal exclusion zone, then randomly samples N "good" anchors (predicted and observed agree) and N "bad" anchors (along the x-axis only, i.e. observed differential binding but no predicted difference). Outputs a combined TSV of selected anchors plus BED files for each cell line.
+Output folder is automatically named with these thresholds appended (e.g., `prefix-c15-cd3-pb0.1-pg1.0-m8`).
+
+### Step 1 — Sample anchors (`SCR_from-claud.py`)
+
+Reads full ChIP-seq-vs-AlphaGenome comparison tables for GM12878 and HepG2. Filters anchors by the configured thresholds, then randomly samples anchors into "good" (predicted and observed agree) and "bad" (observed differential binding but no predicted difference) categories. Outputs a combined TSV of selected anchors plus BED files for each cell line.
 
 ### Step 2 — Intersect with CTCF motifs (`SCR_intersect_motifs_with_anchors.sh`)
 
@@ -34,13 +43,18 @@ For each cell line, generates a 5-panel figure:
 
 Also produces a combined heatmap across both cell lines.
 
-### Step 5 — Combine details (`FUNC_make-file-with-details.py`)
+### Step 5 — Filter and process output files
 
-Joins the per-SNP detail tables from both cell lines with the selected-anchor metadata into a single combined TSV.
+Filters combined anchor-SNP data files by `motif_threshold` using `awk`, producing two additional TSVs containing only high-effect motifs. Additionally:
 
-## Utility script
+- Reorders columns in all TSVs using `../prep_scripts/reorder-cols.py` for consistency
+- Sorts all TSVs by genomic position using `../prep_scripts/sorting.py`
+- Generates reference-allele read-bias plots with `SCR_plot_ref_reads.py`
+
+## Utility scripts
 
 - **`FUNC_get_variants.py`** — Extracts variant IDs (chrom_pos_ref_alt) from the motif intersection file for downstream lookups.
+- **`SCR_from-claud.py`** — Alternative anchor sampling script (currently used; replaces `SCR_from-colab.py`)
 
 ## Data files
 
