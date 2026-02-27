@@ -1,0 +1,516 @@
+CHR	POS1	POS2	n_motif_snps	max_abs_delta	strongest_effect	anchor_summary	GENOME
+chr1	9267242	9267302	1	2.19748	1	SNP that moderately affects CTCF motif strength.	GM
+chr1	29181940	29182134	3	3.49015369138	1	SNP that moderately affects CTCF motif strength.	GM
+chr1	30719326	30719506	1	2.03703	1	SNP that moderately affects CTCF motif strength.	GM
+chr1	30782988	30783126	1	6.76971	2	SNP that strongly alters CTCF motif strength.	GM
+chr1	32892813	32893513	4	4.00888	1	SNP that moderately affects CTCF motif strength.	GM
+chr1	37990013	37990235	3	7.55873	2	SNP that strongly alters CTCF motif strength.	GM
+chr1	39799070	39799850	3	6.47047828881	2	SNP that strongly alters CTCF motif strength.	GM
+chr1	41432846	41432932	1	4.39379	1	SNP that moderately affects CTCF motif strength.	GM
+chr1	54070235	54070305	1	1.32264	1	SNP that moderately affects CTCF motif strength.	GM
+chr1	70528863	70528993	1	1.40125757635	1	SNP that moderately affects CTCF motif strength.	GM
+chr1	75842491	75842881	1	0.100111	0	SNP with no meaningful effect on CTCF motif strength.	GM
+chr1	78114347	78114727	2	1.00404	1	SNP that moderately affects CTCF motif strength.	GM
+chr1	84753672	84753762	3	3.03132	1	SNP that moderately affects CTCF motif strength.	GM
+chr1	89085945	89086065	2	18.747	2	SNP that strongly alters CTCF motif strength.	GM
+chr1	101238875	101238999	1	1.51109817719	1	SNP that moderately affects CTCF motif strength.	GM
+chr1	109532425	109532525	1	2.29926	1	SNP that moderately affects CTCF motif strength.	GM
+chr1	109640365	109640451	3	2.03703	1	SNP that moderately affects CTCF motif strength.	GM
+chr1	111747402	111747448	1	0.123174	0	SNP with no meaningful effect on CTCF motif strength.	GM
+chr1	153352582	153352686	1	0.0384061	0	SNP with no meaningful effect on CTCF motif strength.	GM
+chr1	153617749	153617807	3	7.35449	2	SNP that strongly alters CTCF motif strength.	GM
+chr1	156383111	156383187	1	3.78690070305	1	SNP that moderately affects CTCF motif strength.	GM
+chr1	157496186	157496284	1	4.27107	1	SNP that moderately affects CTCF motif strength.	GM
+chr1	160835132	160835182	2	5.2514	2	SNP that strongly alters CTCF motif strength.	GM
+chr1	160951543	160951583	3	3.4827779732	1	SNP that moderately affects CTCF motif strength.	GM
+chr1	161566305	161566399	1	0.178408647244	0	SNP with no meaningful effect on CTCF motif strength.	GM
+chr1	162878133	162878347	1	1.36486284556	1	SNP that moderately affects CTCF motif strength.	GM
+chr1	167715444	167715746	1	2.80884783528	1	SNP that moderately affects CTCF motif strength.	GM
+chr1	178542519	178542851	3	2.95939	1	SNP that moderately affects CTCF motif strength.	GM
+chr1	182069091	182069300	1	4.34799	1	SNP that moderately affects CTCF motif strength.	GM
+chr1	183916060	183916240	1	0.2559925885	0	SNP with no meaningful effect on CTCF motif strength.	GM
+chr1	196723490	196723580	1	1.00404	1	SNP that moderately affects CTCF motif strength.	GM
+chr1	196827861	196828319	1	1.38163115769	1	SNP that moderately affects CTCF motif strength.	GM
+chr1	199954861	199954909	1	5.48125	2	SNP that strongly alters CTCF motif strength.	GM
+chr1	202160578	202160816	2	0.599121	0	SNP with no meaningful effect on CTCF motif strength.	GM
+chr1	202184797	202184897	1	0.170312	0	SNP with no meaningful effect on CTCF motif strength.	GM
+chr1	202719712	202719794	1	0.599121	0	SNP with no meaningful effect on CTCF motif strength.	GM
+chr1	204989386	204989560	1	0.599121	0	SNP with no meaningful effect on CTCF motif strength.	GM
+chr1	205588761	205588970	1	0.100111	0	SNP with no meaningful effect on CTCF motif strength.	GM
+chr1	207812007	207812107	2	2.91680585687	1	SNP that moderately affects CTCF motif strength.	GM
+chr1	207997937	207998023	2	0.0	0	SNP with no meaningful effect on CTCF motif strength.	GM
+chr1	211649168	211649222	2	7.19516	2	SNP that strongly alters CTCF motif strength.	GM
+chr1	220296395	220296477	1	0.258921	0	SNP with no meaningful effect on CTCF motif strength.	GM
+chr1	222465457	222465619	1	0.0	0	SNP with no meaningful effect on CTCF motif strength.	GM
+chr1	242936905	242936961	3	1.84070861363	1	SNP that moderately affects CTCF motif strength.	GM
+chr2	10435063	10435137	1	1.00404	1	SNP that moderately affects CTCF motif strength.	GM
+chr2	18117782	18117896	2	6.14194	2	SNP that strongly alters CTCF motif strength.	GM
+chr2	18387834	18387936	1	1.61482861376	1	SNP that moderately affects CTCF motif strength.	GM
+chr2	19350079	19350673	1	2.95939	1	SNP that moderately affects CTCF motif strength.	GM
+chr2	20642535	20642591	1	2.17451	1	SNP that moderately affects CTCF motif strength.	GM
+chr2	24083592	24084962	1	0.333875911821	0	SNP with no meaningful effect on CTCF motif strength.	GM
+chr2	25277321	25277530	2	1.86221	1	SNP that moderately affects CTCF motif strength.	GM
+chr2	33475685	33475991	1	0.371762933606	0	SNP with no meaningful effect on CTCF motif strength.	GM
+chr2	38115372	38115440	2	4.27107	1	SNP that moderately affects CTCF motif strength.	GM
+chr2	46461414	46461772	2	1.86713	1	SNP that moderately affects CTCF motif strength.	GM
+chr2	46541715	46542749	1	2.28109127863	1	SNP that moderately affects CTCF motif strength.	GM
+chr2	55620221	55620430	1	3.51586847216	1	SNP that moderately affects CTCF motif strength.	GM
+chr2	64488109	64488281	1	1.86713	1	SNP that moderately affects CTCF motif strength.	GM
+chr2	69375880	69376030	1	0.258921	0	SNP with no meaningful effect on CTCF motif strength.	GM
+chr2	71157622	71157716	1	3.99297865003	1	SNP that moderately affects CTCF motif strength.	GM
+chr2	100263000	100263108	1	2.46186	1	SNP that moderately affects CTCF motif strength.	GM
+chr2	106098238	106098328	3	3.17321	1	SNP that moderately affects CTCF motif strength.	GM
+chr2	108928533	108928637	1	0.355934492603	0	SNP with no meaningful effect on CTCF motif strength.	GM
+chr2	113979627	113979899	3	4.20342	1	SNP that moderately affects CTCF motif strength.	GM
+chr2	118882752	118882902	2	1.00333597573	1	SNP that moderately affects CTCF motif strength.	GM
+chr2	127050271	127050373	1	4.17557	1	SNP that moderately affects CTCF motif strength.	GM
+chr2	153287290	153287404	1	2.01789	1	SNP that moderately affects CTCF motif strength.	GM
+chr2	160994542	160994626	1	0.650791	0	SNP with no meaningful effect on CTCF motif strength.	GM
+chr2	163169657	163169741	2	1.43094700257	1	SNP that moderately affects CTCF motif strength.	GM
+chr2	173402544	173402626	1	6.88317994846	2	SNP that strongly alters CTCF motif strength.	GM
+chr2	176097697	176097819	2	1.89666384739	1	SNP that moderately affects CTCF motif strength.	GM
+chr2	176140449	176140957	1	0.0	0	SNP with no meaningful effect on CTCF motif strength.	GM
+chr2	177029631	177029840	2	4.00888	1	SNP that moderately affects CTCF motif strength.	GM
+chr2	189094434	189094546	1	2.17451	1	SNP that moderately affects CTCF motif strength.	GM
+chr2	196068319	196068667	2	8.05316	2	SNP that strongly alters CTCF motif strength.	GM
+chr2	205766904	205766980	2	4.76169986044	1	SNP that moderately affects CTCF motif strength.	GM
+chr2	217510888	217510960	2	2.95939	1	SNP that moderately affects CTCF motif strength.	GM
+chr2	218034892	218034940	4	1.93692	1	SNP that moderately affects CTCF motif strength.	GM
+chr2	228039874	228039990	2	1.00404	1	SNP that moderately affects CTCF motif strength.	GM
+chr2	232439601	232439810	2	3.705342965	1	SNP that moderately affects CTCF motif strength.	GM
+chr2	232440648	232440780	2	6.41666787127	2	SNP that strongly alters CTCF motif strength.	GM
+chr2	232522182	232522370	1	1.2335	1	SNP that moderately affects CTCF motif strength.	GM
+chr2	233711567	233711665	1	0.97573	0	SNP with no meaningful effect on CTCF motif strength.	GM
+chr2	237475132	237475694	2	1.49113239358	1	SNP that moderately affects CTCF motif strength.	GM
+chr2	238160261	238160651	1	3.26568113511	1	SNP that moderately affects CTCF motif strength.	GM
+chr2	241732549	241732903	3	3.32256903777	1	SNP that moderately affects CTCF motif strength.	GM
+chr2	241875936	241875974	1	2.34561244548	1	SNP that moderately affects CTCF motif strength.	GM
+chr3	8111353	8111399	1	1.14803	1	SNP that moderately affects CTCF motif strength.	GM
+chr3	8623008	8623142	2	5.32359	2	SNP that strongly alters CTCF motif strength.	GM
+chr3	12787513	12787573	4	4.27107	1	SNP that moderately affects CTCF motif strength.	GM
+chr3	62665972	62666094	1	4.28114	1	SNP that moderately affects CTCF motif strength.	GM
+chr3	75552247	75552329	2	1.70394	1	SNP that moderately affects CTCF motif strength.	GM
+chr3	88113720	88113792	1	0.481656416066	0	SNP with no meaningful effect on CTCF motif strength.	GM
+chr3	103991560	103991716	1	2.24981	1	SNP that moderately affects CTCF motif strength.	GM
+chr3	107752772	107752869	1	2.2852778713	1	SNP that moderately affects CTCF motif strength.	GM
+chr3	113838718	113838890	1	0.291471188444	0	SNP with no meaningful effect on CTCF motif strength.	GM
+chr3	115819866	115820018	1	0.110889001849	0	SNP with no meaningful effect on CTCF motif strength.	GM
+chr3	124565062	124565174	2	1.935347742	1	SNP that moderately affects CTCF motif strength.	GM
+chr3	129344075	129344147	1	1.08116236656	1	SNP that moderately affects CTCF motif strength.	GM
+chr3	133041362	133041492	1	3.3195362567	1	SNP that moderately affects CTCF motif strength.	GM
+chr3	136752166	136753098	2	0.760427572278	0	SNP with no meaningful effect on CTCF motif strength.	GM
+chr3	143775483	143775633	1	4.26069	1	SNP that moderately affects CTCF motif strength.	GM
+chr3	156673934	156674578	2	0.0	0	SNP with no meaningful effect on CTCF motif strength.	GM
+chr3	159988668	159988788	1	2.71354805226	1	SNP that moderately affects CTCF motif strength.	GM
+chr3	179069297	179069367	3	2.24981	1	SNP that moderately affects CTCF motif strength.	GM
+chr3	186931198	186931498	1	0.0384061	0	SNP with no meaningful effect on CTCF motif strength.	GM
+chr3	194687902	194688008	1	2.61258614973	1	SNP that moderately affects CTCF motif strength.	GM
+chr4	4335398	4335458	1	0.660687	0	SNP with no meaningful effect on CTCF motif strength.	GM
+chr4	8547172	8547290	1	4.00888	1	SNP that moderately affects CTCF motif strength.	GM
+chr4	10157905	10158007	1	0.890966481572	0	SNP with no meaningful effect on CTCF motif strength.	GM
+chr4	11424172	11424252	1	2.45915266203	1	SNP that moderately affects CTCF motif strength.	GM
+chr4	15756231	15756823	1	0.634328	0	SNP with no meaningful effect on CTCF motif strength.	GM
+chr4	25440048	25440186	1	2.22534913182	1	SNP that moderately affects CTCF motif strength.	GM
+chr4	41661590	41661696	1	0.946970872345	0	SNP with no meaningful effect on CTCF motif strength.	GM
+chr4	52545597	52545677	1	0.769309772979	0	SNP with no meaningful effect on CTCF motif strength.	GM
+chr4	60464263	60464347	1	0.543340867287	0	SNP with no meaningful effect on CTCF motif strength.	GM
+chr4	67327238	67327548	1	0.321407627054	0	SNP with no meaningful effect on CTCF motif strength.	GM
+chr4	76733640	76733678	1	0.258921	0	SNP with no meaningful effect on CTCF motif strength.	GM
+chr4	78059695	78059799	1	3.61904	1	SNP that moderately affects CTCF motif strength.	GM
+chr4	83644835	83644941	1	1.12101	1	SNP that moderately affects CTCF motif strength.	GM
+chr4	85147646	85147758	1	4.27107	1	SNP that moderately affects CTCF motif strength.	GM
+chr4	88219189	88219313	2	1.00404	1	SNP that moderately affects CTCF motif strength.	GM
+chr4	89434531	89434601	2	2.30182	1	SNP that moderately affects CTCF motif strength.	GM
+chr4	98995167	98995655	6	4.35128158909	1	SNP that moderately affects CTCF motif strength.	GM
+chr4	112523788	112524168	1	1.88214	1	SNP that moderately affects CTCF motif strength.	GM
+chr4	121950334	121950464	3	7.55873	2	SNP that strongly alters CTCF motif strength.	GM
+chr4	122914484	122914544	1	5.4555	2	SNP that strongly alters CTCF motif strength.	GM
+chr4	139295824	139295866	2	6.59769	2	SNP that strongly alters CTCF motif strength.	GM
+chr4	151801721	151801779	1	3.61904	1	SNP that moderately affects CTCF motif strength.	GM
+chr4	156378259	156378319	1	11.1706386208	2	SNP that strongly alters CTCF motif strength.	GM
+chr4	158667751	158667965	2	4.39379	1	SNP that moderately affects CTCF motif strength.	GM
+chr4	163544519	163544685	1	2.46186	1	SNP that moderately affects CTCF motif strength.	GM
+chr4	180449583	180449609	1	2.17451	1	SNP that moderately affects CTCF motif strength.	GM
+chr4	182806466	182806630	1	0.0384061	0	SNP with no meaningful effect on CTCF motif strength.	GM
+chr4	189940707	189940955	1	1.86713	1	SNP that moderately affects CTCF motif strength.	GM
+chr5	2038628	2038886	4	3.35780235877	1	SNP that moderately affects CTCF motif strength.	GM
+chr5	17189550	17189670	1	2.01789	1	SNP that moderately affects CTCF motif strength.	GM
+chr5	17203492	17203564	1	2.95939	1	SNP that moderately affects CTCF motif strength.	GM
+chr5	33470723	33470777	2	15.8512293955	2	SNP that strongly alters CTCF motif strength.	GM
+chr5	35815723	35815777	1	17.3680202851	2	SNP that strongly alters CTCF motif strength.	GM
+chr5	36507486	36507570	2	6.14194	2	SNP that strongly alters CTCF motif strength.	GM
+chr5	55226200	55227330	2	1.93692	1	SNP that moderately affects CTCF motif strength.	GM
+chr5	56314713	56314785	1	3.37456	1	SNP that moderately affects CTCF motif strength.	GM
+chr5	71778828	71778894	1	2.01789	1	SNP that moderately affects CTCF motif strength.	GM
+chr5	80083517	80083829	2	1.70394	1	SNP that moderately affects CTCF motif strength.	GM
+chr5	95858785	95859049	2	0.599121	0	SNP with no meaningful effect on CTCF motif strength.	GM
+chr5	104413055	104413107	1	5.03118	2	SNP that strongly alters CTCF motif strength.	GM
+chr5	106122126	106122256	1	2.58890722031	1	SNP that moderately affects CTCF motif strength.	GM
+chr5	112922138	112922528	1	0.97573	0	SNP with no meaningful effect on CTCF motif strength.	GM
+chr5	119268113	119268245	1	4.17557	1	SNP that moderately affects CTCF motif strength.	GM
+chr5	120656016	120656046	2	5.56286	2	SNP that strongly alters CTCF motif strength.	GM
+chr5	133287677	133287723	1	3.77968	1	SNP that moderately affects CTCF motif strength.	GM
+chr5	139394248	139394443	2	2.425874747	1	SNP that moderately affects CTCF motif strength.	GM
+chr5	146446966	146447332	1	3.37456	1	SNP that moderately affects CTCF motif strength.	GM
+chr5	148820948	148821058	1	0.258921	0	SNP with no meaningful effect on CTCF motif strength.	GM
+chr5	151239370	151239472	2	8.15327	2	SNP that strongly alters CTCF motif strength.	GM
+chr5	151316149	151316221	1	0.360177559815	0	SNP with no meaningful effect on CTCF motif strength.	GM
+chr5	152349776	152349910	1	0.258921	0	SNP with no meaningful effect on CTCF motif strength.	GM
+chr5	152462226	152462684	3	6.76971	2	SNP that strongly alters CTCF motif strength.	GM
+chr5	154189921	154190543	3	7.19516	2	SNP that strongly alters CTCF motif strength.	GM
+chr5	160199466	160199642	2	1.86713	1	SNP that moderately affects CTCF motif strength.	GM
+chr5	170184034	170184532	2	1.05307192841	1	SNP that moderately affects CTCF motif strength.	GM
+chr6	188947	189043	1	1.45871762358	1	SNP that moderately affects CTCF motif strength.	GM
+chr6	8888589	8888685	1	1.70093797528	1	SNP that moderately affects CTCF motif strength.	GM
+chr6	14211006	14211414	1	1.82397358827	1	SNP that moderately affects CTCF motif strength.	GM
+chr6	15441353	15441513	2	1.5513828698	1	SNP that moderately affects CTCF motif strength.	GM
+chr6	28104708	28104880	1	0.857612	0	SNP with no meaningful effect on CTCF motif strength.	GM
+chr6	29848202	29848282	3	2.2497	1	SNP that moderately affects CTCF motif strength.	GM
+chr6	31367044	31367106	3	4.42988824454	1	SNP that moderately affects CTCF motif strength.	GM
+chr6	31493834	31494140	1	2.62989719673	1	SNP that moderately affects CTCF motif strength.	GM
+chr6	31923093	31923155	2	5.56286	2	SNP that strongly alters CTCF motif strength.	GM
+chr6	32415572	32415680	1	1.88214	1	SNP that moderately affects CTCF motif strength.	GM
+chr6	32692037	32692425	1	1.00404	1	SNP that moderately affects CTCF motif strength.	GM
+chr6	35757635	35757695	2	2.57409	1	SNP that moderately affects CTCF motif strength.	GM
+chr6	36701682	36701750	2	2.59208	1	SNP that moderately affects CTCF motif strength.	GM
+chr6	41786592	41786670	1	0.153104	0	SNP with no meaningful effect on CTCF motif strength.	GM
+chr6	42104171	42104583	1	1.00404	1	SNP that moderately affects CTCF motif strength.	GM
+chr6	42166553	42166719	1	4.00888	1	SNP that moderately affects CTCF motif strength.	GM
+chr6	43386684	43386732	1	4.17557	1	SNP that moderately affects CTCF motif strength.	GM
+chr6	44237494	44238352	1	0.593837	0	SNP with no meaningful effect on CTCF motif strength.	GM
+chr6	50815746	50816574	1	3.17321	1	SNP that moderately affects CTCF motif strength.	GM
+chr6	53728730	53728812	2	6.76971	2	SNP that strongly alters CTCF motif strength.	GM
+chr6	53956215	53956327	1	1.54039	1	SNP that moderately affects CTCF motif strength.	GM
+chr6	104525720	104526028	1	0.153104	0	SNP with no meaningful effect on CTCF motif strength.	GM
+chr6	106445080	106445164	1	0.123174	0	SNP with no meaningful effect on CTCF motif strength.	GM
+chr6	134882590	134882672	2	4.17557	1	SNP that moderately affects CTCF motif strength.	GM
+chr6	148948034	148948088	3	3.77968	1	SNP that moderately affects CTCF motif strength.	GM
+chr6	149432136	149432210	1	0.0384061	0	SNP with no meaningful effect on CTCF motif strength.	GM
+chr6	155248458	155248666	1	2.2155716314	1	SNP that moderately affects CTCF motif strength.	GM
+chr6	158813934	158814392	1	0.983641066993	0	SNP with no meaningful effect on CTCF motif strength.	GM
+chr6	166400908	166401032	1	1.32264	1	SNP that moderately affects CTCF motif strength.	GM
+chr7	263706	264104	1	7.55873	2	SNP that strongly alters CTCF motif strength.	GM
+chr7	1086641	1087355	3	4.00888	1	SNP that moderately affects CTCF motif strength.	GM
+chr7	1170014	1170068	4	2.65867	1	SNP that moderately affects CTCF motif strength.	GM
+chr7	2651551	2651631	1	0.516069404919	0	SNP with no meaningful effect on CTCF motif strength.	GM
+chr7	4830251	4830349	2	4.00888	1	SNP that moderately affects CTCF motif strength.	GM
+chr7	8036052	8036134	1	0.00400231519703	0	SNP with no meaningful effect on CTCF motif strength.	GM
+chr7	22550351	22550467	1	1.32264	1	SNP that moderately affects CTCF motif strength.	GM
+chr7	22854011	22854379	1	2.32175	1	SNP that moderately affects CTCF motif strength.	GM
+chr7	23545053	23545173	2	8.05316	2	SNP that strongly alters CTCF motif strength.	GM
+chr7	23570766	23570826	1	0.302849332073	0	SNP with no meaningful effect on CTCF motif strength.	GM
+chr7	29589272	29589448	1	0.593837	0	SNP with no meaningful effect on CTCF motif strength.	GM
+chr7	32204500	32204626	2	0.123174	0	SNP with no meaningful effect on CTCF motif strength.	GM
+chr7	32479738	32479806	1	4.03874120217	1	SNP that moderately affects CTCF motif strength.	GM
+chr7	37342679	37343079	1	2.57409	1	SNP that moderately affects CTCF motif strength.	GM
+chr7	38070712	38070848	2	3.77968	1	SNP that moderately affects CTCF motif strength.	GM
+chr7	39742386	39742418	3	3.37456	1	SNP that moderately affects CTCF motif strength.	GM
+chr7	41940852	41941024	1	0.123174	0	SNP with no meaningful effect on CTCF motif strength.	GM
+chr7	48424941	48425015	2	4.26069	1	SNP that moderately affects CTCF motif strength.	GM
+chr7	55255376	55255938	2	1.00404	1	SNP that moderately affects CTCF motif strength.	GM
+chr7	85186831	85187021	1	0.97573	0	SNP with no meaningful effect on CTCF motif strength.	GM
+chr7	85750521	85750603	1	1.88214	1	SNP that moderately affects CTCF motif strength.	GM
+chr7	90708834	90709288	1	0.190375	0	SNP with no meaningful effect on CTCF motif strength.	GM
+chr7	98168674	98168836	1	6.14194	2	SNP that strongly alters CTCF motif strength.	GM
+chr7	100131113	100131181	2	4.39379	1	SNP that moderately affects CTCF motif strength.	GM
+chr7	100966197	100966615	1	1.72897163643	1	SNP that moderately affects CTCF motif strength.	GM
+chr7	101283118	101283178	2	1.32264	1	SNP that moderately affects CTCF motif strength.	GM
+chr7	107879486	107879614	1	0.258921	0	SNP with no meaningful effect on CTCF motif strength.	GM
+chr7	116786908	116787022	1	0.153104	0	SNP with no meaningful effect on CTCF motif strength.	GM
+chr7	130875479	130875557	2	2.46186	1	SNP that moderately affects CTCF motif strength.	GM
+chr7	149624702	149624844	1	2.01789	1	SNP that moderately affects CTCF motif strength.	GM
+chr7	157250737	157250855	1	1.65891361741	1	SNP that moderately affects CTCF motif strength.	GM
+chr8	19779667	19779765	1	0.650791	0	SNP with no meaningful effect on CTCF motif strength.	GM
+chr8	23014422	23014598	1	1.70103063296	1	SNP that moderately affects CTCF motif strength.	GM
+chr8	32549021	32549319	1	0.123174	0	SNP with no meaningful effect on CTCF motif strength.	GM
+chr8	42385375	42385767	1	2.71131002938	1	SNP that moderately affects CTCF motif strength.	GM
+chr8	61139006	61139532	3	2.72994	1	SNP that moderately affects CTCF motif strength.	GM
+chr8	90000664	90001376	3	4.88849141674	1	SNP that moderately affects CTCF motif strength.	GM
+chr8	96164458	96164542	1	2.49250001646	1	SNP that moderately affects CTCF motif strength.	GM
+chr8	102814713	102814869	1	3.63084353147	1	SNP that moderately affects CTCF motif strength.	GM
+chr8	106081112	106081260	1	0.190375	0	SNP with no meaningful effect on CTCF motif strength.	GM
+chr8	107779915	107779991	1	3.61904	1	SNP that moderately affects CTCF motif strength.	GM
+chr8	134685540	134685922	1	2.95939	1	SNP that moderately affects CTCF motif strength.	GM
+chr8	142447552	142447714	2	0.258921	0	SNP with no meaningful effect on CTCF motif strength.	GM
+chr8	142545696	142545814	1	0.515880405397	0	SNP with no meaningful effect on CTCF motif strength.	GM
+chr8	143383708	143383794	1	0.94101	0	SNP with no meaningful effect on CTCF motif strength.	GM
+chr8	144277681	144277890	5	0.95754231569	0	SNP with no meaningful effect on CTCF motif strength.	GM
+chr8	144326783	144327021	1	2.24981	1	SNP that moderately affects CTCF motif strength.	GM
+chr9	613936	614102	1	2.50403022829	1	SNP that moderately affects CTCF motif strength.	GM
+chr9	806697	806789	1	0.97573	0	SNP with no meaningful effect on CTCF motif strength.	GM
+chr9	1009236	1009330	2	1.59836	1	SNP that moderately affects CTCF motif strength.	GM
+chr9	1732831	1732931	1	2.24981	1	SNP that moderately affects CTCF motif strength.	GM
+chr9	4762041	4762937	1	2.14849940025	1	SNP that moderately affects CTCF motif strength.	GM
+chr9	6354257	6354361	1	1.59836	1	SNP that moderately affects CTCF motif strength.	GM
+chr9	7402153	7402257	1	1.32264	1	SNP that moderately affects CTCF motif strength.	GM
+chr9	16039491	16039700	1	1.00404	1	SNP that moderately affects CTCF motif strength.	GM
+chr9	16192322	16192434	1	1.05280819307	1	SNP that moderately affects CTCF motif strength.	GM
+chr9	18442713	18442863	1	3.07736140718	1	SNP that moderately affects CTCF motif strength.	GM
+chr9	19471892	19472112	2	3.33554161304	1	SNP that moderately affects CTCF motif strength.	GM
+chr9	21413870	21413964	1	3.19581	1	SNP that moderately affects CTCF motif strength.	GM
+chr9	27529651	27529927	4	6.25332733003	2	SNP that strongly alters CTCF motif strength.	GM
+chr9	34664466	34664544	2	1.06832	1	SNP that moderately affects CTCF motif strength.	GM
+chr9	36855635	36855715	1	3.03132	1	SNP that moderately affects CTCF motif strength.	GM
+chr9	69549576	69549662	1	0.190375	0	SNP with no meaningful effect on CTCF motif strength.	GM
+chr9	78239631	78239840	1	1.86713	1	SNP that moderately affects CTCF motif strength.	GM
+chr9	88741522	88741560	1	4.00888	1	SNP that moderately affects CTCF motif strength.	GM
+chr9	92729406	92729618	3	4.17557	1	SNP that moderately affects CTCF motif strength.	GM
+chr9	96317460	96317590	2	4.83333957262	1	SNP that moderately affects CTCF motif strength.	GM
+chr9	98074529	98074611	1	0.576554384687	0	SNP with no meaningful effect on CTCF motif strength.	GM
+chr9	104091906	104091944	1	0.0384061	0	SNP with no meaningful effect on CTCF motif strength.	GM
+chr9	105447879	105448087	5	7.37541	2	SNP that strongly alters CTCF motif strength.	GM
+chr9	114108099	114108147	2	3.82061	1	SNP that moderately affects CTCF motif strength.	GM
+chr9	132575170	132575250	3	0.0	0	SNP with no meaningful effect on CTCF motif strength.	GM
+chr9	137035100	137035586	1	2.95055224742	1	SNP that moderately affects CTCF motif strength.	GM
+chr10	4982199	4982307	1	2.07246891	1	SNP that moderately affects CTCF motif strength.	GM
+chr10	6086536	6086614	2	1.46382451546	1	SNP that moderately affects CTCF motif strength.	GM
+chr10	20858448	20858550	1	0.0384061	0	SNP with no meaningful effect on CTCF motif strength.	GM
+chr10	28677261	28677475	1	1.92697095032	1	SNP that moderately affects CTCF motif strength.	GM
+chr10	30591321	30591421	2	1.85728119091	1	SNP that moderately affects CTCF motif strength.	GM
+chr10	30726878	30727126	3	4.20194138072	1	SNP that moderately affects CTCF motif strength.	GM
+chr10	30751999	30752083	3	4.34799	1	SNP that moderately affects CTCF motif strength.	GM
+chr10	32005125	32005199	1	0.97573	0	SNP with no meaningful effect on CTCF motif strength.	GM
+chr10	42866813	42866901	1	5.1379	2	SNP that strongly alters CTCF motif strength.	GM
+chr10	49407700	49407788	1	1.70264935066	1	SNP that moderately affects CTCF motif strength.	GM
+chr10	50660262	50660378	2	4.00888	1	SNP that moderately affects CTCF motif strength.	GM
+chr10	55740909	55741015	1	0.97573	0	SNP with no meaningful effect on CTCF motif strength.	GM
+chr10	69392644	69392732	2	1.2335	1	SNP that moderately affects CTCF motif strength.	GM
+chr10	69800237	69800299	1	0.857612	0	SNP with no meaningful effect on CTCF motif strength.	GM
+chr10	71812097	71812169	2	1.26296	1	SNP that moderately affects CTCF motif strength.	GM
+chr10	78303085	78303697	1	0.0	0	SNP with no meaningful effect on CTCF motif strength.	GM
+chr10	79347346	79347454	1	3.37456	1	SNP that moderately affects CTCF motif strength.	GM
+chr10	79779445	79779653	2	3.36242671905	1	SNP that moderately affects CTCF motif strength.	GM
+chr10	80029385	80029465	1	0.893989	0	SNP with no meaningful effect on CTCF motif strength.	GM
+chr10	86139213	86139281	2	4.17557	1	SNP that moderately affects CTCF motif strength.	GM
+chr10	93289197	93289273	1	1.2335	1	SNP that moderately affects CTCF motif strength.	GM
+chr10	96765799	96765903	1	6.53162	2	SNP that strongly alters CTCF motif strength.	GM
+chr10	97407225	97407747	1	0.350949089828	0	SNP with no meaningful effect on CTCF motif strength.	GM
+chr10	97731888	97731980	2	1.00404	1	SNP that moderately affects CTCF motif strength.	GM
+chr10	98467530	98467676	1	1.54039	1	SNP that moderately affects CTCF motif strength.	GM
+chr10	102669851	102670060	3	14.3377581862	2	SNP that strongly alters CTCF motif strength.	GM
+chr10	109852482	109852674	1	0.170312	0	SNP with no meaningful effect on CTCF motif strength.	GM
+chr10	117216736	117216844	3	4.56427284944	1	SNP that moderately affects CTCF motif strength.	GM
+chr10	120942981	120943055	1	0.353562	0	SNP with no meaningful effect on CTCF motif strength.	GM
+chr10	121887147	121887223	3	18.7679	2	SNP that strongly alters CTCF motif strength.	GM
+chr10	125982448	125982570	2	2.95939	1	SNP that moderately affects CTCF motif strength.	GM
+chr10	128035632	128035722	1	0.97573	0	SNP with no meaningful effect on CTCF motif strength.	GM
+chr10	132352737	132352853	2	0.219303922806	0	SNP with no meaningful effect on CTCF motif strength.	GM
+chr10	133247114	133247196	2	2.46186	1	SNP that moderately affects CTCF motif strength.	GM
+chr11	723416	723460	1	0.0384061	0	SNP with no meaningful effect on CTCF motif strength.	GM
+chr11	1640287	1640443	1	4.3331322543	1	SNP that moderately affects CTCF motif strength.	GM
+chr11	2428366	2428436	2	4.00888	1	SNP that moderately affects CTCF motif strength.	GM
+chr11	2531515	2531587	2	0.541318495856	0	SNP with no meaningful effect on CTCF motif strength.	GM
+chr11	3417078	3417230	1	0.660687	0	SNP with no meaningful effect on CTCF motif strength.	GM
+chr11	8099462	8099520	1	4.26069	1	SNP that moderately affects CTCF motif strength.	GM
+chr11	18171504	18171656	2	3.36743172557	1	SNP that moderately affects CTCF motif strength.	GM
+chr11	20355411	20355459	1	0.258921	0	SNP with no meaningful effect on CTCF motif strength.	GM
+chr11	20610202	20610368	2	2.46186	1	SNP that moderately affects CTCF motif strength.	GM
+chr11	22829737	22830131	2	6.17775370199	2	SNP that strongly alters CTCF motif strength.	GM
+chr11	26276961	26277053	2	5.05438053283	2	SNP that strongly alters CTCF motif strength.	GM
+chr11	33988144	33988200	1	5.2514	2	SNP that strongly alters CTCF motif strength.	GM
+chr11	35238150	35238502	1	0.604419750887	0	SNP with no meaningful effect on CTCF motif strength.	GM
+chr11	35392315	35392471	1	3.19581	1	SNP that moderately affects CTCF motif strength.	GM
+chr11	44538628	44538694	3	4.27107	1	SNP that moderately affects CTCF motif strength.	GM
+chr11	45102899	45103415	1	2.17451	1	SNP that moderately affects CTCF motif strength.	GM
+chr11	62325059	62325129	1	3.11265	1	SNP that moderately affects CTCF motif strength.	GM
+chr11	62612376	62613176	1	0.148180404318	0	SNP with no meaningful effect on CTCF motif strength.	GM
+chr11	69101544	69101676	1	1.86713	1	SNP that moderately affects CTCF motif strength.	GM
+chr11	101860904	101860990	1	0.0384061	0	SNP with no meaningful effect on CTCF motif strength.	GM
+chr11	116217183	116217247	1	11.0408	2	SNP that strongly alters CTCF motif strength.	GM
+chr11	117479483	117479631	1	4.34799	1	SNP that moderately affects CTCF motif strength.	GM
+chr11	133835316	133835390	2	3.11265	1	SNP that moderately affects CTCF motif strength.	GM
+chr11	134592502	134592678	1	2.05826203184	1	SNP that moderately affects CTCF motif strength.	GM
+chr12	949648	950054	3	3.82061	1	SNP that moderately affects CTCF motif strength.	GM
+chr12	1093226	1093794	1	2.30182	1	SNP that moderately affects CTCF motif strength.	GM
+chr12	3299871	3300923	1	4.00888	1	SNP that moderately affects CTCF motif strength.	GM
+chr12	5988675	5988845	2	4.5214079039	1	SNP that moderately affects CTCF motif strength.	GM
+chr12	6278784	6278942	1	3.18743453955	1	SNP that moderately affects CTCF motif strength.	GM
+chr12	6766821	6767030	1	2.2497	1	SNP that moderately affects CTCF motif strength.	GM
+chr12	14937854	14937932	1	1.23694913063	1	SNP that moderately affects CTCF motif strength.	GM
+chr12	20946799	20947021	1	4.0470816022	1	SNP that moderately affects CTCF motif strength.	GM
+chr12	26853934	26854008	1	0.0384061	0	SNP with no meaningful effect on CTCF motif strength.	GM
+chr12	50070654	50070702	2	3.82061	1	SNP that moderately affects CTCF motif strength.	GM
+chr12	50132686	50132754	1	18.7679	2	SNP that strongly alters CTCF motif strength.	GM
+chr12	51047846	51048424	1	2.03703	1	SNP that moderately affects CTCF motif strength.	GM
+chr12	52879499	52880283	1	0.100111	0	SNP with no meaningful effect on CTCF motif strength.	GM
+chr12	53287849	53287937	2	4.26069	1	SNP that moderately affects CTCF motif strength.	GM
+chr12	56636513	56637275	1	5.03118	2	SNP that strongly alters CTCF motif strength.	GM
+chr12	57263919	57264011	1	1.77190966233	1	SNP that moderately affects CTCF motif strength.	GM
+chr12	57462540	57463000	2	1.93692	1	SNP that moderately affects CTCF motif strength.	GM
+chr12	57476339	57476533	1	2.57409	1	SNP that moderately affects CTCF motif strength.	GM
+chr12	69357625	69357715	1	7.52923	2	SNP that strongly alters CTCF motif strength.	GM
+chr12	69738629	69738837	1	0.769826701299	0	SNP with no meaningful effect on CTCF motif strength.	GM
+chr12	102702676	102702736	3	4.00888	1	SNP that moderately affects CTCF motif strength.	GM
+chr12	107761114	107761338	1	7.231174118	2	SNP that strongly alters CTCF motif strength.	GM
+chr12	110431379	110431821	1	0.593837	0	SNP with no meaningful effect on CTCF motif strength.	GM
+chr12	119413328	119413392	1	0.163187	0	SNP with no meaningful effect on CTCF motif strength.	GM
+chr12	121223451	121223991	4	2.06138706936	1	SNP that moderately affects CTCF motif strength.	GM
+chr12	124898564	124898668	2	5.4555	2	SNP that strongly alters CTCF motif strength.	GM
+chr12	125533573	125533677	1	0.635545870871	0	SNP with no meaningful effect on CTCF motif strength.	GM
+chr12	131949706	131949914	2	3.98934675505	1	SNP that moderately affects CTCF motif strength.	GM
+chr13	20489336	20489406	1	4.00888	1	SNP that moderately affects CTCF motif strength.	GM
+chr13	26186149	26186873	3	3.61904	1	SNP that moderately affects CTCF motif strength.	GM
+chr13	59906554	59906694	1	2.17451	1	SNP that moderately affects CTCF motif strength.	GM
+chr13	91348918	91349284	1	1.9836071355	1	SNP that moderately affects CTCF motif strength.	GM
+chr13	96229481	96229569	1	3.6099	1	SNP that moderately affects CTCF motif strength.	GM
+chr13	107205482	107205562	2	3.11265	1	SNP that moderately affects CTCF motif strength.	GM
+chr13	110412328	110412470	1	0.0158721858839	0	SNP with no meaningful effect on CTCF motif strength.	GM
+chr13	112444116	112444212	2	3.00436584444	1	SNP that moderately affects CTCF motif strength.	GM
+chr13	113393996	113394284	3	4.26069	1	SNP that moderately affects CTCF motif strength.	GM
+chr14	20970954	20971866	1	0.317560269989	0	SNP with no meaningful effect on CTCF motif strength.	GM
+chr14	21748925	21749085	1	1.09297790605	1	SNP that moderately affects CTCF motif strength.	GM
+chr14	21978339	21978421	1	1.6124	1	SNP that moderately affects CTCF motif strength.	GM
+chr14	22040099	22040651	1	0.258921	0	SNP with no meaningful effect on CTCF motif strength.	GM
+chr14	22556999	22557483	2	2.1496205078	1	SNP that moderately affects CTCF motif strength.	GM
+chr14	24058435	24058495	1	6.76971	2	SNP that strongly alters CTCF motif strength.	GM
+chr14	55446237	55446425	1	5.52231969009	2	SNP that strongly alters CTCF motif strength.	GM
+chr14	64983853	64983921	2	5.28114	2	SNP that strongly alters CTCF motif strength.	GM
+chr14	65961179	65961251	3	2.32520533853	1	SNP that moderately affects CTCF motif strength.	GM
+chr14	67837179	67837261	2	4.00888	1	SNP that moderately affects CTCF motif strength.	GM
+chr14	68816682	68816958	1	1.59903910772	1	SNP that moderately affects CTCF motif strength.	GM
+chr14	71166623	71166723	1	3.77968	1	SNP that moderately affects CTCF motif strength.	GM
+chr14	92686971	92687129	1	8.05316	2	SNP that strongly alters CTCF motif strength.	GM
+chr14	94689659	94689701	1	0.190375	0	SNP with no meaningful effect on CTCF motif strength.	GM
+chr14	106592408	106592622	1	2.46186	1	SNP that moderately affects CTCF motif strength.	GM
+chr14	106694861	106695070	2	1.06832	1	SNP that moderately affects CTCF motif strength.	GM
+chr15	29139962	29140042	3	5.73992365811	2	SNP that strongly alters CTCF motif strength.	GM
+chr15	31129394	31129554	2	2.95939	1	SNP that moderately affects CTCF motif strength.	GM
+chr15	31215210	31216362	1	0.97573	0	SNP with no meaningful effect on CTCF motif strength.	GM
+chr15	34969749	34969931	3	6.76971	2	SNP that strongly alters CTCF motif strength.	GM
+chr15	45705494	45706050	1	0.555431	0	SNP with no meaningful effect on CTCF motif strength.	GM
+chr15	57560840	57561702	1	1.31750856646	1	SNP that moderately affects CTCF motif strength.	GM
+chr15	66567131	66567261	2	6.14194	2	SNP that strongly alters CTCF motif strength.	GM
+chr15	69576094	69576246	2	2.64651696846	1	SNP that moderately affects CTCF motif strength.	GM
+chr15	77910591	77911021	2	3.98519	1	SNP that moderately affects CTCF motif strength.	GM
+chr15	84570769	84571291	2	2.46186	1	SNP that moderately affects CTCF motif strength.	GM
+chr15	89760676	89761396	3	4.63953678764	1	SNP that moderately affects CTCF motif strength.	GM
+chr15	101652241	101652561	2	3.08305763161	1	SNP that moderately affects CTCF motif strength.	GM
+chr16	2927184	2927236	1	3.17321	1	SNP that moderately affects CTCF motif strength.	GM
+chr16	4253921	4254197	1	2.04802631951	1	SNP that moderately affects CTCF motif strength.	GM
+chr16	9050583	9050679	1	1.50751339096	1	SNP that moderately affects CTCF motif strength.	GM
+chr16	9160284	9160350	2	6.76971	2	SNP that strongly alters CTCF motif strength.	GM
+chr16	10256830	10257260	2	5.10065044143	2	SNP that strongly alters CTCF motif strength.	GM
+chr16	15550965	15551153	1	0.298961151343	0	SNP with no meaningful effect on CTCF motif strength.	GM
+chr16	21278263	21278381	1	2.14719615269	1	SNP that moderately affects CTCF motif strength.	GM
+chr16	25276734	25276886	1	0.258921	0	SNP with no meaningful effect on CTCF motif strength.	GM
+chr16	31159818	31159896	3	4.34799	1	SNP that moderately affects CTCF motif strength.	GM
+chr16	51762204	51762340	1	1.0271	1	SNP that moderately affects CTCF motif strength.	GM
+chr16	57299826	57301172	1	1.289764087	1	SNP that moderately affects CTCF motif strength.	GM
+chr16	66751523	66752023	1	0.0719338	0	SNP with no meaningful effect on CTCF motif strength.	GM
+chr16	68263974	68264496	4	5.6225094222	2	SNP that strongly alters CTCF motif strength.	GM
+chr16	70251966	70252030	1	1.32264	1	SNP that moderately affects CTCF motif strength.	GM
+chr16	71311600	71312040	2	2.82619795439	1	SNP that moderately affects CTCF motif strength.	GM
+chr16	72124958	72125218	1	1.41727210336	1	SNP that moderately affects CTCF motif strength.	GM
+chr16	78006061	78006119	1	4.26069	1	SNP that moderately affects CTCF motif strength.	GM
+chr16	81205204	81205310	1	5.03118	2	SNP that strongly alters CTCF motif strength.	GM
+chr16	81738101	81738203	1	0.153104	0	SNP with no meaningful effect on CTCF motif strength.	GM
+chr16	84175411	84175471	1	6.76971	2	SNP that strongly alters CTCF motif strength.	GM
+chr16	84511505	84511565	2	7.38858704238	2	SNP that strongly alters CTCF motif strength.	GM
+chr16	84970651	84970781	1	1.06832	1	SNP that moderately affects CTCF motif strength.	GM
+chr16	85086863	85086905	1	1.42275	1	SNP that moderately affects CTCF motif strength.	GM
+chr16	85303438	85303506	1	0.100111	0	SNP with no meaningful effect on CTCF motif strength.	GM
+chr16	87779181	87779377	1	0.650791	0	SNP with no meaningful effect on CTCF motif strength.	GM
+chr16	89574769	89574861	1	2.01789	1	SNP that moderately affects CTCF motif strength.	GM
+chr16	89615706	89615796	1	6.03101530782	2	SNP that strongly alters CTCF motif strength.	GM
+chr17	3732248	3732406	1	0.425573963197	0	SNP with no meaningful effect on CTCF motif strength.	GM
+chr17	8057799	8057879	1	0.601194678413	0	SNP with no meaningful effect on CTCF motif strength.	GM
+chr17	8745449	8746579	1	1.28355206	1	SNP that moderately affects CTCF motif strength.	GM
+chr17	12342719	12342901	2	1.90125091931	1	SNP that moderately affects CTCF motif strength.	GM
+chr17	13031895	13032085	2	1.00404	1	SNP that moderately affects CTCF motif strength.	GM
+chr17	26603750	26604060	1	5.07078284353	2	SNP that strongly alters CTCF motif strength.	GM
+chr17	27197481	27197899	2	1.8018286456	1	SNP that moderately affects CTCF motif strength.	GM
+chr17	32253195	32253275	1	2.92461855689	1	SNP that moderately affects CTCF motif strength.	GM
+chr17	43766567	43766615	1	5.2514	2	SNP that strongly alters CTCF motif strength.	GM
+chr17	45022061	45022169	2	3.17321	1	SNP that moderately affects CTCF motif strength.	GM
+chr17	46253969	46254065	1	0.0152628922817	0	SNP with no meaningful effect on CTCF motif strength.	GM
+chr17	48814551	48814615	2	3.01750150717	1	SNP that moderately affects CTCF motif strength.	GM
+chr17	55514147	55514213	2	2.95939	1	SNP that moderately affects CTCF motif strength.	GM
+chr17	66567348	66567448	1	0.190375	0	SNP with no meaningful effect on CTCF motif strength.	GM
+chr17	80101401	80101585	1	0.893989	0	SNP with no meaningful effect on CTCF motif strength.	GM
+chr17	82037395	82038003	1	0.254135633586	0	SNP with no meaningful effect on CTCF motif strength.	GM
+chr18	8696893	8696987	1	4.27973	1	SNP that moderately affects CTCF motif strength.	GM
+chr18	10438003	10438087	1	3.97572291751	1	SNP that moderately affects CTCF motif strength.	GM
+chr18	10520239	10520313	1	2.39937	1	SNP that moderately affects CTCF motif strength.	GM
+chr18	12727196	12727306	1	0.270929486387	0	SNP with no meaningful effect on CTCF motif strength.	GM
+chr18	26621576	26621658	1	0.123174	0	SNP with no meaningful effect on CTCF motif strength.	GM
+chr18	37322573	37322679	2	0.0	0	SNP with no meaningful effect on CTCF motif strength.	GM
+chr18	52904030	52904076	1	3.19581	1	SNP that moderately affects CTCF motif strength.	GM
+chr18	58493949	58494037	1	0.102423219541	0	SNP with no meaningful effect on CTCF motif strength.	GM
+chr18	77054983	77055361	2	0.0	0	SNP with no meaningful effect on CTCF motif strength.	GM
+chr19	506696	507456	5	8.05316	2	SNP that strongly alters CTCF motif strength.	GM
+chr19	605143	605947	2	1.89608670893	1	SNP that moderately affects CTCF motif strength.	GM
+chr19	2019723	2019809	2	18.7679	2	SNP that strongly alters CTCF motif strength.	GM
+chr19	2610709	2611557	1	0.309627899325	0	SNP with no meaningful effect on CTCF motif strength.	GM
+chr19	3618590	3618724	1	0.541907151676	0	SNP with no meaningful effect on CTCF motif strength.	GM
+chr19	4352705	4352821	2	1.00404	1	SNP that moderately affects CTCF motif strength.	GM
+chr19	4369890	4370208	1	4.17557	1	SNP that moderately affects CTCF motif strength.	GM
+chr19	6460102	6460692	3	3.77968	1	SNP that moderately affects CTCF motif strength.	GM
+chr19	6552077	6552249	1	0.904700641103	0	SNP with no meaningful effect on CTCF motif strength.	GM
+chr19	7799679	7799819	1	2.32175	1	SNP that moderately affects CTCF motif strength.	GM
+chr19	11131111	11131155	2	4.00888	1	SNP that moderately affects CTCF motif strength.	GM
+chr19	12775597	12775693	1	2.39861039305	1	SNP that moderately affects CTCF motif strength.	GM
+chr19	12832586	12832956	2	2.22152521638	1	SNP that moderately affects CTCF motif strength.	GM
+chr19	14472292	14472392	1	1.38011111859	1	SNP that moderately affects CTCF motif strength.	GM
+chr19	14888818	14889068	2	0.258921	0	SNP with no meaningful effect on CTCF motif strength.	GM
+chr19	17205418	17205462	2	1.4917079848	1	SNP that moderately affects CTCF motif strength.	GM
+chr19	17453587	17453645	1	5.39208	2	SNP that strongly alters CTCF motif strength.	GM
+chr19	29694729	29694831	1	5.03118	2	SNP that strongly alters CTCF motif strength.	GM
+chr19	39110524	39110596	2	3.26483614238	1	SNP that moderately affects CTCF motif strength.	GM
+chr19	39440291	39440665	3	5.2514	2	SNP that strongly alters CTCF motif strength.	GM
+chr19	39502939	39502977	1	2.6128443434	1	SNP that moderately affects CTCF motif strength.	GM
+chr19	40570654	40570992	5	7.19516	2	SNP that strongly alters CTCF motif strength.	GM
+chr19	40909121	40909205	1	2.59208	1	SNP that moderately affects CTCF motif strength.	GM
+chr19	41706837	41707157	1	7.5895179258	2	SNP that strongly alters CTCF motif strength.	GM
+chr19	42857288	42857522	1	0.145481009978	0	SNP with no meaningful effect on CTCF motif strength.	GM
+chr19	42885020	42885140	1	0.893989	0	SNP with no meaningful effect on CTCF motif strength.	GM
+chr19	44500415	44500747	1	9.4770955267	2	SNP that strongly alters CTCF motif strength.	GM
+chr19	49199014	49199082	1	0.601014579565	0	SNP with no meaningful effect on CTCF motif strength.	GM
+chr19	50252350	50252586	1	4.34799	1	SNP that moderately affects CTCF motif strength.	GM
+chr19	52748462	52748556	1	2.95939	1	SNP that moderately affects CTCF motif strength.	GM
+chr20	739155	739227	1	0.362336	0	SNP with no meaningful effect on CTCF motif strength.	GM
+chr20	1466754	1467160	1	1.86713	1	SNP that moderately affects CTCF motif strength.	GM
+chr20	2688134	2688212	3	3.77968	1	SNP that moderately affects CTCF motif strength.	GM
+chr20	7031401	7031459	1	5.28114	2	SNP that strongly alters CTCF motif strength.	GM
+chr20	9912989	9913171	2	7.37541	2	SNP that strongly alters CTCF motif strength.	GM
+chr20	13302763	13302857	1	3.6099	1	SNP that moderately affects CTCF motif strength.	GM
+chr20	19785046	19785132	1	2.32175	1	SNP that moderately affects CTCF motif strength.	GM
+chr20	21693421	21693630	2	5.03118	2	SNP that strongly alters CTCF motif strength.	GM
+chr20	23782520	23782602	1	0.0	0	SNP with no meaningful effect on CTCF motif strength.	GM
+chr20	25861636	25861758	1	3.94281518753	1	SNP that moderately affects CTCF motif strength.	GM
+chr20	25987171	25987681	1	3.96642136271	1	SNP that moderately affects CTCF motif strength.	GM
+chr20	41956464	41956550	3	4.17557	1	SNP that moderately affects CTCF motif strength.	GM
+chr20	47786593	47786721	1	1.51356	1	SNP that moderately affects CTCF motif strength.	GM
+chr20	51326386	51326454	2	1.82448	1	SNP that moderately affects CTCF motif strength.	GM
+chr20	59525629	59525809	1	5.4555	2	SNP that strongly alters CTCF motif strength.	GM
+chr20	59751238	59751292	1	7.37541	2	SNP that strongly alters CTCF motif strength.	GM
+chr20	63948552	63949590	2	7.19516	2	SNP that strongly alters CTCF motif strength.	GM
+chr21	25881952	25882020	1	2.14106	1	SNP that moderately affects CTCF motif strength.	GM
+chr21	37220854	37221646	3	1.00404	1	SNP that moderately affects CTCF motif strength.	GM
+chr21	42107947	42108109	1	4.00888	1	SNP that moderately affects CTCF motif strength.	GM
+chr21	42593318	42593518	1	1.30198072659	1	SNP that moderately affects CTCF motif strength.	GM
+chr21	42818401	42818459	2	6.14194	2	SNP that strongly alters CTCF motif strength.	GM
+chr21	45478242	45478338	2	2.70121991019	1	SNP that moderately affects CTCF motif strength.	GM
+chr21	46228859	46229137	1	0.0384061	0	SNP with no meaningful effect on CTCF motif strength.	GM
+chr22	20697631	20697747	3	4.17557	1	SNP that moderately affects CTCF motif strength.	GM
+chr22	22810114	22810186	4	8.05316	2	SNP that strongly alters CTCF motif strength.	GM
+chr22	23315728	23315830	3	4.17557	1	SNP that moderately affects CTCF motif strength.	GM
+chr22	24259587	24259725	2	2.46186	1	SNP that moderately affects CTCF motif strength.	GM
+chr22	24768901	24769071	1	0.0	0	SNP with no meaningful effect on CTCF motif strength.	GM
+chr22	26672694	26672974	1	2.57409	1	SNP that moderately affects CTCF motif strength.	GM
+chr22	26756771	26756833	1	3.12113241994	1	SNP that moderately affects CTCF motif strength.	GM
+chr22	34944015	34944069	3	3.37456	1	SNP that moderately affects CTCF motif strength.	GM
+chr22	35043418	35043492	1	3.11265	1	SNP that moderately affects CTCF motif strength.	GM
+chr22	36221893	36222039	1	2.34536067388	1	SNP that moderately affects CTCF motif strength.	GM
+chr22	37267115	37267395	2	3.61904	1	SNP that moderately affects CTCF motif strength.	GM
+chr22	37283511	37283720	4	2.20570140717	1	SNP that moderately affects CTCF motif strength.	GM
+chr22	41666747	41666979	2	2.46186	1	SNP that moderately affects CTCF motif strength.	GM
+chr22	43388476	43388574	1	7.37175309932	2	SNP that strongly alters CTCF motif strength.	GM
+chr22	44684862	44685010	2	3.14836533411	1	SNP that moderately affects CTCF motif strength.	GM
+chr22	44820777	44820855	2	1.00404	1	SNP that moderately affects CTCF motif strength.	GM
+chr22	49923501	49923710	2	7.25536091096	2	SNP that strongly alters CTCF motif strength.	GM
+chrX	12771562	12771702	1	0.190375	0	SNP with no meaningful effect on CTCF motif strength.	GM
+chrX	12951006	12951112	1	0.0384061	0	SNP with no meaningful effect on CTCF motif strength.	GM
+chrX	24054063	24054813	3	4.27107	1	SNP that moderately affects CTCF motif strength.	GM
+chrX	101803603	101803695	1	4.26069	1	SNP that moderately affects CTCF motif strength.	GM
+chrX	121000719	121000811	1	0.324726172424	0	SNP with no meaningful effect on CTCF motif strength.	GM
+chrX	129726512	129726594	1	0.100111	0	SNP with no meaningful effect on CTCF motif strength.	GM
