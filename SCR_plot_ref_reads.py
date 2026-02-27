@@ -13,12 +13,10 @@ labels = {"1": "Reference has more reads", "0": "Alternative has more reads", "2
 # Get unique genomes
 genomes = df['GENOME_y'].unique()
 
-# Create two separate figures
-fig1, axes1 = plt.subplots(len(genomes), 5, figsize=(20, 9))
+# Create figure
 fig2, axes2 = plt.subplots(len(genomes), 5, figsize=(20, 9))
 
 if len(genomes) == 1:
-    axes1 = axes1.reshape(1, -1)
     axes2 = axes2.reshape(1, -1)
 
 for idx, genome in enumerate(genomes):
@@ -44,55 +42,20 @@ for idx, genome in enumerate(genomes):
         # Shuffle the dataframe to mix up plotting order
         plot_df_shuffled = plot_df.sample(frac=1, random_state=42)
         
-        # Calculate both metrics
-        within1_mask = abs(plot_df['DIFF_LOG2_data1'] - plot_df['DIFF_LOG2_data2']) <= 1
+        # Calculate metrics
         along_x = abs(plot_df['DIFF_LOG2_data2']) < 0.1
         btwn_lines_mask = abs(plot_df['DIFF_LOG2_data1'] - plot_df['DIFF_LOG2_data2']) <= thresh
         cloud_consistency = (plot_df['DIFF_LOG2_data1'] > 0.5) & (plot_df['DIFF_LOG2_data2'] > 0.5) | (plot_df['DIFF_LOG2_data1'] < -0.5) & (plot_df['DIFF_LOG2_data2'] < -0.5)
-        
+
         n_total = len(plot_df)
-        
-        # Stats for within ±1
-        n_good_1 = within1_mask.sum()
-        perc_good_1 = n_good_1 / n_total if n_total > 0 else 0
-        n_along_x = along_x.sum()
-        perc_along_x = n_along_x / n_total if n_total > 0 else 0
-        n_good_cloud = cloud_consistency.sum()
-        perc_good_cloud = n_good_cloud / n_total if n_total > 0 else 0
-        
+
         # Stats for within ±thresh
         n_good_thresh = btwn_lines_mask.sum()
         perc_good_thresh = n_good_thresh / n_total if n_total > 0 else 0
-        n_along_x_thresh = along_x.sum()  # Same along_x applies
-        perc_along_x_thresh = n_along_x_thresh / n_total if n_total > 0 else 0
         n_good_cloud_thresh = cloud_consistency.sum()
         perc_good_cloud_thresh = n_good_cloud_thresh / n_total if n_total > 0 else 0
 
-        # Plot on first figure (within ±1)
-        ax1 = axes1[idx, plot_idx]
-        for val in sorted(categories):
-            subset = plot_df_shuffled[plot_df_shuffled['ref_more_reads'] == val]
-            ax1.scatter(
-                subset['DIFF_LOG2_data1'],
-                subset['DIFF_LOG2_data2'],
-                color=cmap(val),
-                alpha=0.3,
-                label=labels.get(str(val)),
-                s=15
-            )
-        ax1.legend(loc='best')
-        ax1.axline((0, 1), slope=1, color='gray', linestyle='--', alpha=0.5)
-        ax1.axline((0, -1), slope=1, color='gray', linestyle='--', alpha=0.5)
-        ax1.axline((0, 0.5), slope=0, color='gray', linestyle='--', alpha=0.5)
-        ax1.axline((0, -0.5), slope=0, color='gray', linestyle='--', alpha=0.5)
-        ax1.set_xlabel("Empirical Log2 Fold Change")
-        ax1.set_ylabel("Predicted Log2 Fold Change")
-        ax1.set_title(f"{genome}: {config['title_suffix']} (n={n_total}),\n Gradient of Goodness: {n_good_1} [{perc_good_1:.1%}]\n Belt of Badness: {n_along_x} [{perc_along_x:.1%}]\n Clouds of Consistency: {n_good_cloud} [{perc_good_cloud:.1%}]")
-        ax1.grid(True, alpha=0.3)
-        ax1.set_xlim(-6,6)
-        ax1.set_ylim(-7,7)
-        
-        # Plot on second figure (within ±thresh)
+        # Plot on figure (within ±thresh)
         ax2 = axes2[idx, plot_idx]
         for val in sorted(categories):
             subset = plot_df_shuffled[plot_df_shuffled['ref_more_reads'] == val]
@@ -116,33 +79,13 @@ for idx, genome in enumerate(genomes):
         ax2.set_xlim(-6,6)
         ax2.set_ylim(-7,7)
 
-        # For axes1
-        ax1.add_patch(Rectangle((0.5, 0.5), 5.5, 5.5, 
+        ax2.add_patch(Rectangle((0.5, 0.5), 5.5, 5.5,
             linewidth=1, 
             edgecolor='black', 
             facecolor='none',
             linestyle='--',
             alpha=0.7))
 
-        ax1.add_patch(Rectangle((-0.5, -0.5), -5.5, -5.5, 
-            linewidth=1, 
-            edgecolor='black', 
-            facecolor='none',
-            linestyle='--',
-            alpha=0.7))
-
-        # For axes2
-        ax2.add_patch(Rectangle((0.5, 0.5), 5.5, 5.5, 
-            linewidth=1, 
-            edgecolor='black', 
-            facecolor='none',
-            linestyle='--',
-            alpha=0.7))
-
-
-# Save both figures
-fig1.tight_layout()
-fig1.savefig(f'{folder}/8-ref-comparison_within1.png', dpi=300)
 
 fig2.tight_layout()
 fig2.savefig(f'{folder}/8-ref-comparison_within{thresh}.png', dpi=300)
