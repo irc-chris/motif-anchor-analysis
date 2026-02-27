@@ -3,13 +3,13 @@ motif_threshold=8
 chip_diff_threshold=0
 empirical_threshold=15
 bad_ag_threshold=0.1
-good_ag_threshold=6
-FULL='outside'
+good_ag_threshold=1
+FULL='full'
 
 folder="${folder}-c${empirical_threshold}-cd${chip_diff_threshold}-pb${bad_ag_threshold}-pg${good_ag_threshold}-m${motif_threshold}"
 mkdir -p "$folder"
 
-Experiment='DRZ' #"DKV" # DKV or AKB or DRZ
+Experiment= #'DRZ' #"DKV" # DKV or AKB or DRZ
 
 # python SCR_from-colab.py $1 yes no no $Experiment $chip_diff_threshold
 python SCR_from-claud.py $folder $FULL $chip_diff_threshold $bad_ag_threshold $good_ag_threshold $Experiment

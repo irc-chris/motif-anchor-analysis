@@ -30,7 +30,7 @@ def filter_high_chip_diff(df, threshold):
     """Keep only rows where abs(DIFF_LOG2_data1) > threshold."""
     return df[abs(df['DIFF_LOG2_data1']) > threshold].copy()
 
-def create_good_bad_datasets(df, genome_name, good_ag_threshold=1, bad_ag_threshold=0.1):
+def create_good_bad_datasets(df, genome_name):
     """
     Add binary columns for each group (one-hot encoding) and assign single prediction_quality label.
     A point can satisfy multiple group criteria, but gets ONE final label based on priority.
