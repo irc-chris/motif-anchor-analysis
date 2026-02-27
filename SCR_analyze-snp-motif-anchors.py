@@ -7,6 +7,7 @@ import sys
 # ---------------------------- 
 TYPE = sys.argv[1]  # "GM" or "HG2"
 folder = sys.argv[2]
+motif_thresh = float(sys.argv[3])
 
 INPUT = f"{folder}/2-{TYPE}_anchors_with_motifs.tsv"
 OUTPUT = f"{folder}/3-{TYPE}_JUST-snp-analysis.tsv"
@@ -61,6 +62,9 @@ df["abs_delta"] = df["delta_score"].abs()
 
 # Classify motif effects
 df["motif_effect"] = df["abs_delta"].apply(classify_motif_effect)
+df["motif_exists"] = (df["h1_score"] >= motif_thresh) | (df["h2_score"] >= motif_thresh)
+count_motif_exists = df['motif_exists'].sum()
+print(f"df - motif_exists: {count_motif_exists} / {len(df)} ({count_motif_exists/len(df):.1%})")
 
 # ---------------------------- 
 # Per-anchor summary

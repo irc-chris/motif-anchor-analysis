@@ -10,12 +10,12 @@ Genome_names = {
 }
 
 def determine_ref_more_reads(phase, h1_reads, h2_reads):
-    if phase == "0|1":
+    if phase == "0|1" or phase == "0|1,0|1":
             if h1_reads > h2_reads:
                 Flag = 1
             else:
                 Flag = 0
-    elif phase == "1|0":
+    elif phase == "1|0" or phase == "1|0,1|0":
             if h1_reads > h2_reads:
                 Flag = 0
             else:
@@ -53,6 +53,8 @@ def plot_confusion_heatmap(ax, x_param, adf, type='all', ylabels=True):
         adf[x_param]
     )
     
+    confusion_pct = confusion_data.div(confusion_data.sum(axis=0), axis=1) * 100
+
     # Check if confusion matrix is empty
     if confusion_data.empty or confusion_data.size == 0:
         ax.text(0.5, 0.5, 'No data available', 
@@ -65,7 +67,7 @@ def plot_confusion_heatmap(ax, x_param, adf, type='all', ylabels=True):
         confusion_data, 
         annot=True, 
         fmt='d', 
-        cmap='YlOrRd', 
+        cmap='Blues', 
         ax=ax,
         cbar_kws={'label': 'Count'}
     )
@@ -77,16 +79,16 @@ def plot_confusion_heatmap(ax, x_param, adf, type='all', ylabels=True):
     elif type == 'unique':
         anchor_type = "Unique Anchors Only"
     elif type == 'motif':
-        anchor_type = f"Anchor-Strong-Motif Pairs (Either Motif Score ≥ {motif_threshold})"
+        anchor_type = f"Anchors with Existing Motif (either motif ≥ {motif_threshold})"
     if ylabels:
         ax.set_yticklabels(SNP_EFFECT_LABELS)
         ax.set_ylabel("Strongest SNP Effect on CTCF Motif")
     else:
         ax.tick_params(axis='y', left=False, labelleft=False)
         ax.set(ylabel=None)
-    ax.set_xticklabels(['Bad Prediction', 'Good Prediction'])
+    # ax.set_xticklabels(['Bad Prediction', 'Good Prediction', 'Cloud Prediction'])
     ax.set_title(f"{anchor_type}\nSNP Effect vs Prediction Accuracy (n={n})")
-    ax.set_xlabel("Predicted Within ±1 of Empirical?")
+    # ax.set_xlabel("Predicted Within ±1 of Empirical?")
 
 
 def plot_combined_boxplot(ax, data, snp_effect_groups, effect_labels, title_prefix, positions_emp, positions_pred):
@@ -150,6 +152,69 @@ def plot_combined_boxplot(ax, data, snp_effect_groups, effect_labels, title_pref
         Patch(facecolor='lightcoral', alpha=0.7, label='Predicted')
     ]
     ax.legend(handles=legend_elements, loc='upper right')
+
+
+def plot_motif_vs_quality_confusion(df, folder, genome, unique=False):
+    """
+    Create confusion matrix of motif_exists vs prediction_quality.
+    
+    Parameters:
+    -----------
+    df : pandas.DataFrame
+        DataFrame with motif_exists and prediction_quality columns
+    folder : str
+        Folder path to save the figure
+    """
+    # Create confusion matrix (flipped: motif_exists as rows, prediction_quality as columns)
+    confusion_data = pd.crosstab(
+        df['motif_exists'],
+        df['prediction_quality']
+    )
+
+    confusion_pct = confusion_data.div(confusion_data.sum(axis=0), axis=1) * 100
+
+    # Get counts per prediction quality column
+    quality_counts = df['prediction_quality'].value_counts()
+    quality_order = confusion_data.columns # Exclude 'Total' column
+    n_per_quality = [quality_counts.get(q, 0) for q in quality_order]
+    
+    # Get counts per motif_exists row
+    motif_counts = df['motif_exists'].value_counts()
+    motif_order = confusion_data.index  # Include all rows
+    n_per_motif = [motif_counts.get(m, 0) for m in reversed(motif_order)]
+
+    # Create figure
+    fig, ax = plt.subplots(figsize=(10, 6))
+    
+    # Plot heatmap (include totals)
+    sns.heatmap(
+        confusion_pct,
+        annot=True,
+        fmt='.1f',  # One decimal place for percentages
+        cmap='Blues',
+        ax=ax,
+        cbar_kws={'label': 'Percentage (%)'}
+    )
+    
+    ax.set_ylabel(f'Motif Exists (h1 or h2 score ≥ {motif_threshold})\n(n={", ".join(map(str, n_per_motif))})')
+    ax.set_xlabel(f'Prediction Quality\n(n={", ".join(map(str, n_per_quality))})')
+    anchor_type = "Unique Anchors" if unique else "All Anchor-Motif Overlaps"
+    ax.set_title(f'{anchor_type}: Motif Existence vs Prediction Quality\n(n={len(df)})')   
+     
+    plt.tight_layout()
+    plt.close()
+    
+    if unique:
+        fig.savefig(f'{folder}/6-{genome}_unique_motif_exists_vs_quality.png', dpi=300)
+    else:
+        fig.savefig(f'{folder}/6-{genome}_motif_exists_vs_quality.png', dpi=300)
+
+    print(f"Saved confusion matrix to {folder}/6-{genome}_motif_exists_vs_quality.png")
+    print("\nConfusion Matrix:")
+    print(confusion_data)
+
+# Usage:
+# plot_motif_vs_quality_confusion(df, folder)
 
 # ---------------------------- 
 # Configuration
@@ -239,9 +304,9 @@ for genome in GENOMES:
         axes[0,0].scatter(
             group_df['DIFF_LOG2_data1'],
             group_df['DIFF_LOG2_data2'],
-            # c=colors[group_df.index],
+            c=group_df['prediction_quality'].map({'good': 'green', 'bad': 'red', 'cloud':'blue', 'other':'gray'}),
             label=group_name,
-            alpha=0.7,
+            alpha=0.2,
             s=30
         )
     n_plot1 = len(combined_with_snp_df)
@@ -267,19 +332,17 @@ for genome in GENOMES:
                         "Good Predictions", positions_emp, positions_pred)
     
     # Plot 4 (1,0): Confusion matrix - all overlaps
-    print("\nUnique 'btwn_lines' values and their counts:")
-    print(combined_with_snp_df['btwn_lines'].value_counts())
-    plot_confusion_heatmap(axes[1,0], "btwn_lines", combined_with_snp_df, type='all', ylabels=True)
+    print("\nUnique 'prediction_quality' values and their counts:")
+    print(combined_with_snp_df['prediction_quality'].value_counts())
+    plot_confusion_heatmap(axes[1,0], "prediction_quality", combined_with_snp_df, type='all', ylabels=True)
     
     # Plot 5 (1,1): Confusion matrix - unique anchors
     combined_with_snp_unique_anchors = combined_with_snp_df.sort_values('strongest_effect').drop_duplicates(subset=['CHR', 'POS1', 'POS2'], keep='last')
-    plot_confusion_heatmap(axes[1,1], "btwn_lines", combined_with_snp_unique_anchors, type='unique', ylabels=True)
+    plot_confusion_heatmap(axes[1,1], "prediction_quality", combined_with_snp_unique_anchors, type='unique', ylabels=True)
     
     # Plot 6: (1,2) Confusion matrix - strong motif overlaps only
-    motif_quality_mask = (combined_with_snp_df['h1_score'] >= motif_threshold) | (combined_with_snp_df['h2_score'] >= motif_threshold)
-    combined_with_snp_df['quality_motif'] = motif_quality_mask.astype(int)
-    combined_with_snp_good_motif = combined_with_snp_df[combined_with_snp_df['quality_motif'] == 1]
-    plot_confusion_heatmap(axes[1,2], "btwn_lines", combined_with_snp_good_motif, type='motif', ylabels=True)
+    combined_with_snp_good_motif = combined_with_snp_df[combined_with_snp_df['motif_exists'] == 1]
+    plot_confusion_heatmap(axes[1,2], "prediction_quality", combined_with_snp_good_motif, type='motif', ylabels=True)
 
     combined_with_snp_df.to_csv(f"{folder}/6-{genome}_combined_anchor_snp_data.tsv", sep="\t", index=False)
 
@@ -289,16 +352,27 @@ for genome in GENOMES:
     
     all_genome_dfs.append(combined_with_snp_df)
 
+    plot_motif_vs_quality_confusion(combined_with_snp_df, folder, genome)
+    plot_motif_vs_quality_confusion(combined_with_snp_unique_anchors, folder, genome, unique=True)
+
+    # Or more concisely (works for both boolean and int):
+    count_motif_exists = combined_with_snp_df['motif_exists'].sum()
+
+    print(f"combined_with_snp_df - motif_exists: {count_motif_exists} / {len(combined_with_snp_df)} ({count_motif_exists/len(combined_with_snp_df):.1%})")
+    
+
 # ---------------------------- 
 # Combined genome plot
 # ---------------------------- 
 fig, ax = plt.subplots(figsize=(8, 6))
 total_df = pd.concat(all_genome_dfs, ignore_index=True)
 total_df.to_csv(f"{folder}/6-combined_anchor_snp_data.tsv", sep="\t", index=False)
-plot_confusion_heatmap(ax, "btwn_lines", total_df, type='all')
+plot_confusion_heatmap(ax, "prediction_quality", total_df, type='all')
 
 plt.tight_layout()
-plt.savefig(f"{folder}/6-combined_btwn_lines_vs_strongest_effect.png", dpi=300)
+plt.savefig(f"{folder}/6-combined_prediction_quality_vs_strongest_effect.png", dpi=300)
 plt.close()
+
+plot_motif_vs_quality_confusion(total_df, folder, "ALL")
 
 print(f"\nAll plots saved to {folder}/")
