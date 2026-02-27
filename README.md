@@ -104,9 +104,7 @@ python SCR_from-claud.py <folder> <FULL> <chip_diff_threshold> <bad_ag_threshold
 | `1-motif_anchor_analysis_selected_anchors.tsv` | All anchors with prediction quality labels |
 | `1-hepg2_selected_anchors_variants.bed` | Unique HepG2 anchor positions (BED) |
 | `1-gm12878_selected_anchors_variants.bed` | Unique GM12878 anchor positions (BED) |
-| `1-hepg2_filtered.tsv` | HepG2 anchors after ChIP-seq threshold filter |
-| `1-gm12878_filtered.tsv` | GM12878 anchors after ChIP-seq threshold filter |
-| `simple_quality_check.png` | Scatter of empirical vs predicted, colored by quality label |
+| `1-simple_quality_check.png` | Scatter of empirical vs predicted, colored by quality label |
 
 ---
 
@@ -184,7 +182,7 @@ Produces per-genome 5-panel figures and a combined cross-genome heatmap. Outputs
 
 ### `SCR_plot_ref_reads.py`
 
-**Generates reference-allele read-bias scatter plots** across five SNP category combinations (all, REF vs ALT only, ALT only, REF only, multi-SNP/phased). Produces two figures: one using a fixed ±1 band and one using the configurable `good_ag_threshold`.
+**Generates reference-allele read-bias scatter plots** across five SNP category combinations (all, REF vs ALT only, ALT only, REF only, multi-SNP/phased).
 
 ```bash
 python SCR_plot_ref_reads.py <folder> <good_ag_threshold>
@@ -199,7 +197,6 @@ python SCR_plot_ref_reads.py <folder> <good_ag_threshold>
 
 | File | Description |
 |---|---|
-| `8-ref-comparison_within1.png` | Read-bias plots using fixed ±1 band |
 | `8-ref-comparison_within{thresh}.png` | Read-bias plots using configurable threshold |
 
 ---
@@ -212,58 +209,12 @@ Legacy anchor sampling script, superseded by `SCR_from-claud.py`. Kept for refer
 
 ## Helper/utility files (`FUNC_`)
 
-`FUNC_` files are reusable helpers or one-off utilities. They are **not** top-level pipeline entry points.
+Not top-level pipeline entry points — helpers called by scripts or standalone one-off utilities.
 
----
-
-### `FUNC_filter-df.py`
-
-**Generic in-place row filter** — keeps rows where a given field exceeds a threshold. Overwrites the input file.
-
-```bash
-python FUNC_filter-df.py <input_file> <field_name> <threshold>
-```
-
-| Positional arg | Description |
-|---|---|
-| `sys.argv[1]` | Path to TSV file (overwritten in place) |
-| `sys.argv[2]` | Column name to filter on |
-| `sys.argv[3]` | Numeric threshold (keeps rows where `field > threshold`) |
-
----
-
-### `FUNC_make-file-with-details.py`
-
-**Joins the two per-genome SNP motif detail files** with the selected anchor metadata into a single combined TSV.
-
-```bash
-python FUNC_make-file-with-details.py <hg2_details> <gm_details> <anchor_details> [output_file]
-```
-
-| Positional arg | Description |
-|---|---|
-| `sys.argv[1]` | `3-HG2_snp_motif_details.tsv` |
-| `sys.argv[2]` | `3-GM_snp_motif_details.tsv` |
-| `sys.argv[3]` | `1-motif_anchor_analysis_selected_anchors.tsv` |
-| `sys.argv[4]` | Output path (default: `combined2.tsv`) |
-
----
-
-### `FUNC_analyze-moods.py`
-
-**Standalone diagnostic** — plots the distribution of `delta_score` and a boxplot of `delta_score` by `strongest_effect` for a given SNP detail file.
-
-```bash
-python FUNC_analyze-moods.py <snp_detail_tsv>
-```
-
----
-
-### `FUNC_get_variants.py`
-
-**One-off utility** — extracts variant identifiers from `GM_anchors_with_motifs.tsv` and writes a flat variant table. Paths are **hardcoded** and must be edited before use.
-
-**Output:** `GM_variants.tsv` — columns: `variant_id, CHROM, POS, REF, ALT`
+- **`FUNC_filter-df.py`** — Generic in-place row filter. Usage: `python FUNC_filter-df.py <tsv> <field_name> <threshold>` — keeps rows where `field > threshold`, overwrites input file.
+- **`FUNC_make-file-with-details.py`** — Joins the two per-genome SNP motif detail files with anchor metadata into one TSV. Usage: `python FUNC_make-file-with-details.py <hg2_details> <gm_details> <anchor_details> [output_file]`
+- **`FUNC_analyze-moods.py`** — Standalone diagnostic; plots `delta_score` distribution and boxplot by `strongest_effect` for a given SNP detail file. Usage: `python FUNC_analyze-moods.py <snp_detail_tsv>`
+- **`FUNC_get_variants.py`** — One-off utility; extracts `variant_id, CHROM, POS, REF, ALT` from `GM_anchors_with_motifs.tsv`. Paths are **hardcoded** and must be edited before use.
 
 ---
 
@@ -285,11 +236,9 @@ After a complete run the folder (e.g. `myrun-c15-cd0-pb0.1-pg6.0-m8/`) contains:
 ```
 <folder>/
 ├── 1-motif_anchor_analysis_selected_anchors.tsv
-├── 1-gm12878_filtered.tsv
-├── 1-hepg2_filtered.tsv
 ├── 1-gm12878_selected_anchors_variants.bed
 ├── 1-hepg2_selected_anchors_variants.bed
-├── simple_quality_check.png
+├── 1-simple_quality_check.png
 ├── 2-GM_anchors_with_motifs.tsv
 ├── 2-HG2_anchors_with_motifs.tsv
 ├── 3-GM_JUST-snp-analysis.tsv
@@ -301,7 +250,6 @@ After a complete run the folder (e.g. `myrun-c15-cd0-pb0.1-pg6.0-m8/`) contains:
 ├── 6-combined_anchor_snp_data.tsv
 ├── 7-GM-combined_details_motifs{threshold}.tsv
 ├── 7-HG2-combined_details_motifs{threshold}.tsv
-├── 8-ref-comparison_within1.png
 └── 8-ref-comparison_within{thresh}.png
 ```
 
